@@ -1,0 +1,20 @@
+/*
+	Usage:
+
+	<span class="bg-qubared fg-white">Hello</span>
+
+	This would render "hello" in white text with a qubared background
+*/
+
+@each $key, $val in $colors{
+	&.bg{ // background
+		&-#{$key}{
+			background: $val;
+		}
+	}
+	&.fg{ // foreground
+		&-#{$key}{
+			color: $val;
+		}
+	}
+}

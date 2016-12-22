@@ -1,0 +1,34 @@
+// https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+@mixin below($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+	@if $value != null {
+		@media (max-width: $value) { @content; }
+	} @else if type-of($breakpoint) == "number"{
+		@media (max-width: $breakpoint) { @content; }
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+@mixin above($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+	@if $value != null {
+		@media (min-width: $value) { @content; }
+	} @else if type-of($breakpoint) == "number"{
+		@media (min-width: $breakpoint) { @content; }
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+@mixin font-size($min, $max){
+	font-size: $min;
+	$range: $max - $min;
+	$unit: $range / length($breakpoints);
+	$i: 0;
+	@each $key, $val in $breakpoints{
+		$i: $i + 1;
+		@include above($val){
+			font-size: (($unit * $i) + $min);
+		}
+	}
+}

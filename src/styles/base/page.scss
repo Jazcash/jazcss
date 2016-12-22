@@ -1,0 +1,17 @@
+*, :before, :after{
+	box-sizing: border-box;
+}
+
+body{
+	background-color: $body-background;
+	color: color(nero);
+	font-family: $primary-font;
+	-webkit-font-smoothing: antialiased; // standardise font appearance between OS'
+	-moz-osx-font-smoothing: grayscale;
+	overflow-y: scroll;
+}
+
+main{
+	padding-top: $spacer;
+	padding-bottom: $spacer;
+}

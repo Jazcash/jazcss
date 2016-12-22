@@ -1,0 +1,48 @@
+/*
+	Usage
+
+	padded-md: pads an element by
+*/
+
+.padded{
+	$counter: 1;
+	@each $prefix in ("xs", "sm", "md", "lg", "xl", "xxl"){
+		&-#{$prefix}{
+			padding: $spacer-#{$prefix};
+		}
+		&-h-#{$prefix}{
+			padding-left: ($xs * $counter);
+			padding-right: ($xs * $counter);
+		}
+		&-v-#{$prefix}{
+			padding-top: ($xs * $counter);
+			padding-bottom: ($xs * $counter);
+		}
+		$counter: $counter + 1;
+	}
+}
+
+@each $key, $val in $breakpoints{
+	&.#{$key}{
+		@include above($val){
+			&-padded{
+				$xs: $spacer;
+				$counter: 1;
+				@each $prefix in ("xs", "sm", "md", "lg", "xl", "xxl"){
+					&-#{$prefix}{
+						padding: ($xs * $counter);
+					}
+					&-h-#{$prefix}{
+						padding-left: ($xs * $counter);
+						padding-right: ($xs * $counter);
+					}
+					&-v-#{$prefix}{
+						padding-top: ($xs * $counter);
+						padding-bottom: ($xs * $counter);
+					}
+					$counter: $counter + 1;
+				}
+			}
+		}
+	}
+}

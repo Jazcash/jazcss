@@ -1,0 +1,41 @@
+.wrapped{
+	max-width: $wrapperWidth;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.unwrapped{
+	background: red;
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+}
+
+/*
+	vw takes the vertical scrollbar into account because it's bad.
+	The .unwrapped class works based on vw, which means we need to
+	offset the margins by the total width of the scrollbar.
+	The classes below are added to body from util/scroll-width.js
+
+	12px, 15px and 17px are the only ones supported for now, based on
+	this list: https://codepen.io/sambible/post/browser-scrollbar-widths
+*/
+.scroll-width{
+	&-12{
+		.unwrapped{
+			margin-left: calc(-50vw + 50% + 6px);
+			margin-right: calc(-50vw + 50% + 6px);
+		}
+	}
+	&-15{ //
+		.unwrapped{
+			margin-left: calc(-50vw + 50% + 7px);
+			margin-right: calc(-50vw + 50% + 8px);
+		}
+	}
+	&-17{
+		.unwrapped{
+			margin-left: calc(-50vw + 50% + 8px);
+			margin-right: calc(-50vw + 50% + 9px);
+		}
+	}
+}

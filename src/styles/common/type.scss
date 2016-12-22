@@ -1,0 +1,56 @@
+/* Headings */
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
+	margin: 0 0 $spacer/2 0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h1,.h1{@include font-size(36px, 48px);}
+h2,.h2{@include font-size(32px, 40px);}
+h3,.h3{@include font-size(28px, 32px);}
+h4,.h4{@include font-size(24px, 26px);}
+h5,.h5{@include font-size(20px, 22px);}
+h6,.h6{@include font-size(16px, 18px);}
+
+/* Paragraph */
+p{
+	margin: 0 0 $spacer 0;
+	font-family: "Open Sans", sans-serif;
+	@include font-size(14px, 18px);
+	&.lead{
+		@include font-size(16px, 20px);
+	}
+}
+
+/* List item */
+li{
+	@include font-size(14px, 18px);
+}
+
+/* Blockquote */
+blockquote{
+	padding-left: $spacer;
+	border-left: 3px solid #ccc;
+	font-style: italic;
+	opacity: 0.8;
+	footer{
+		background: none;
+		margin-top: $spacer/2;
+		font-style: normal;
+		font-weight: bold;
+	}
+}
+
+/* Code */
+:not(pre) > code{
+	background: #ddd;
+	border: 1px solid rgba(#000, 0.2);
+	border-radius: 2px;
+	padding: 0 4px;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+small{
+	font-size: 60%;
+}

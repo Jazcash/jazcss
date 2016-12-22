@@ -1,0 +1,60 @@
+input, textarea{
+	padding: 5px;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	&:disabled, &[readonly]{
+		background: #e4e4e4;
+		border-color: #aaa;
+	}
+	&:invalid:not(:required){
+		border-color: #ff888b;
+		background-color: #ffd7d8;
+	}
+	&[type=text],
+	&[type=email],
+	&[type=password],
+	&[type=url]{
+		width: 250px;
+	}
+	&[type=radio], &[type=checkbox]{
+		& + label{
+			margin-left: 5px;
+			& + input[type=radio], & + input[type=checkbox]{
+				margin-left: 10px;
+			}
+		}
+		&:disabled + label{
+			opacity: 0.4;
+		}
+	}
+	&[type=color]{
+		padding: 0;
+		&:disabled{
+			opacity: 0.4;
+		}
+	}
+	&[type=range][orient=vertical]{
+		-webkit-appearance: slider-vertical;
+		writing-mode: bt-lr;
+	}
+}
+
+textarea{
+	width: 250px;
+}
+
+label{
+	font-weight: 600;
+	&.required:after{
+		content: "*";
+		font-size: 12px;
+		vertical-align: top;
+		margin-left: 5px;
+		color: red;
+	}
+}
+
+button{
+	@extend .btn;
+}

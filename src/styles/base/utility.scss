@@ -1,0 +1,21 @@
+// http://stackoverflow.com/a/4407335/1864403
+.noselect{
+	user-select: none;
+}
+
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+
+.noscroll{
+	overflow: hidden;
+	::-webkit-scrollbar{
+		visibility: hidden;
+	}
+}

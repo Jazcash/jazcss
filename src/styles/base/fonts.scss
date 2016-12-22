@@ -1,0 +1,15 @@
+/*
+	If possible, use a web font and import it in the <head>.
+	http://stackoverflow.com/a/12380004/1864403
+
+	Otherwise, place your .woff font files in /public/fonts/ and use the code below.
+	It's not recommended to use font files unless you have them in .woff format
+	http://stackoverflow.com/a/22738998/1864403
+*/
+
+/*
+@font-face {
+	font-family: 'MyWebFont';
+	src: url('webfont.woff') format('woff');
+}
+*/
