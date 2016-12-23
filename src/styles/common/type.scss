@@ -1,7 +1,7 @@
 /* Headings */
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
-	margin: 0 0 $spacer/2 0;
+	// TODO - margin: 0 0 $spacer/2 0;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
@@ -14,7 +14,7 @@ h6,.h6{@include font-size(16px, 18px);}
 
 /* Paragraph */
 p{
-	margin: 0 0 $spacer 0;
+	// TODO - margin: 0 0 $spacer 0;
 	font-family: "Open Sans", sans-serif;
 	@include font-size(14px, 18px);
 	&.lead{
@@ -29,13 +29,13 @@ li{
 
 /* Blockquote */
 blockquote{
-	padding-left: $spacer;
+	// TODO - padding-left: $spacer;
 	border-left: 3px solid #ccc;
 	font-style: italic;
 	opacity: 0.8;
 	footer{
 		background: none;
-		margin-top: $spacer/2;
+		// TODO - margin-top: $spacer/2;
 		font-style: normal;
 		font-weight: bold;
 	}

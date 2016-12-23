@@ -1,22 +1,22 @@
 $wrapperWidth: 960px; // 960, 1080, 1200 recommended
-$wrapper-breakout-width: 120px;
-$wrapper-padding-width: 10px;
+$wrapperBreakoutWidth: 120px;
 
 $spacer: (
-	"xs" : 5px,
-	"sm" : 10px,
-	"md" : 15px,
-	"lg" : 20px,
-	"xl" : 25px,
-	"xxl": 30px
+	xs : 5px,
+	sm : 10px,
+	md : 15px,
+	lg : 20px,
+	xl : 25px,
+	xxl: 30px
 );
 
 $breakpoints: (
-	"xs": 350px,  // older smartphones
-	"sm": 480px,  // newer smartphones
-	"md": 768px,  // tablets and old laptops
-	"lg": 1024px, // new laptops and small monitors
-	"xl": 1440px  // medium+ sized monitors
+	xs : 350px,  // older smartphones
+	sm : 480px,  // newer smartphones
+	md : 768px,  // tablets and old laptops
+	lg : 1024px, // new laptops and small monitors
+	xl : 1440px, // medium sized monitors
+	xxl: 1920px  // large sized monitors
 );
 
 // colour name ideas - http://chir.ag/projects/name-that-color/#6195ED
@@ -31,10 +31,3 @@ $colors: (
 	pear         : #BDC120,
 	pear-light   : #DBDD32
 );
-
-$body-background : map-get($colors, white-smoke);
-$link-color      : map-get($colors, qubared);
-$link-hover-color: map-get($colors, qubared-light);
-
-$primary-font  : "Open Sans", sans-serif;
-$base-font-size: 16px;

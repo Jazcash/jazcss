@@ -1,24 +1,25 @@
 /*
-	Usage
+	Examples
 
-	padded-md: pads an element by
+	padded-md: pads an element by spacer-md on all sides
+	padded-v-sm: pads an element by spacer-sm on top and bottom
+	padded-v-xs padded-h-xl: pads an element by spacer-xs on
+	top and bottom and spacer-xl on left and right
 */
 
 .padded{
-	$counter: 1;
-	@each $prefix in ("xs", "sm", "md", "lg", "xl", "xxl"){
-		&-#{$prefix}{
-			padding: $spacer-#{$prefix};
+	@each $key, $val in $spacer{
+		&-#{$key}{
+			padding: $val;
 		}
-		&-h-#{$prefix}{
-			padding-left: ($xs * $counter);
-			padding-right: ($xs * $counter);
+		&-h-#{$key}{
+			padding-left: $val;
+			padding-right: $val;
 		}
-		&-v-#{$prefix}{
-			padding-top: ($xs * $counter);
-			padding-bottom: ($xs * $counter);
+		&-v-#{$key}{
+			padding-top: $val;
+			padding-bottom: $val;
 		}
-		$counter: $counter + 1;
 	}
 }
 
@@ -26,21 +27,18 @@
 	&.#{$key}{
 		@include above($val){
 			&-padded{
-				$xs: $spacer;
-				$counter: 1;
-				@each $prefix in ("xs", "sm", "md", "lg", "xl", "xxl"){
-					&-#{$prefix}{
-						padding: ($xs * $counter);
+				@each $key, $val in $spacer{
+					&-#{$key}{
+						padding: $val;
 					}
-					&-h-#{$prefix}{
-						padding-left: ($xs * $counter);
-						padding-right: ($xs * $counter);
+					&-h-#{$key}{
+						padding-left: $val;
+						padding-right: $val;
 					}
-					&-v-#{$prefix}{
-						padding-top: ($xs * $counter);
-						padding-bottom: ($xs * $counter);
+					&-v-#{$key}{
+						padding-top: $val;
+						padding-bottom: $val;
 					}
-					$counter: $counter + 1;
 				}
 			}
 		}
