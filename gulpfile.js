@@ -1,5 +1,6 @@
 const gulp         = require("gulp");
 const plumber      = require("gulp-plumber");
+const runSequence  = require('run-sequence');
 const sourcemaps   = require("gulp-sourcemaps");
 const rename       = require("gulp-rename");
 const sassGlob     = require("gulp-sass-glob");
@@ -124,8 +125,8 @@ gulp.task("build", ["clean"], function(){
 	gulp.start("images");
 });
 
-gulp.task("serve", ["build"], function(){
-	gulp.start("browsersync");
+gulp.task("serve", function(){
+	runSequence("clean", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
 });
 
 gulp.task("default", [

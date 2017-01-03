@@ -38,6 +38,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-wait": "0.0.2",
     "gulp-watch": "^4.3.11",
-    "handlebars-layouts": "^3.1.4"
+    "handlebars-layouts": "^3.1.4",
+    "run-sequence": "^1.2.2"
   }
 }
