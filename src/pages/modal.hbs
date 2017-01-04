@@ -1,11 +1,15 @@
 {{#extend "main"}}
 	{{#content "body"}}
-		<a href="#modal">Call the modal with data-remodal-id="modal"</a>
 
-		{{#extend "modal"}}
+		<a href="#mymodal">Call the modal with data-remodal-id="modal"</a>
+
+		{{#extend "modal" modal-id="mymodal"}}
 			{{#content "content"}}
 				My Content
 			{{/content}}
 		{{/extend}}
+
+		<div style="height: 2000px">d</div>
+
 	{{/content}}
 {{/extend}}

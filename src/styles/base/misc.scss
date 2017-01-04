@@ -1,4 +1,8 @@
+// stop remodal being silly
 html.remodal-is-locked{
 	overflow: initial;
 	touch-action: initial;
+}
+body{
+	padding-right: 0 !important;
 }

@@ -3,10 +3,12 @@
 		&-row{
 			display: flex;
 			flex-direction: row;
+			flex-wrap: wrap;
 		}
 		&-col{
 			display: flex;
 			flex-direction: column;
+			flex-wrap: wrap;
 		}
 		&-left{
 			margin-right: auto;
@@ -19,9 +21,6 @@
 		}
 		&-bottom{
 			margin-top: auto;
-		}
-		&-wrap{
-			flex-wrap: wrap;
 		}
 		&-nowrap{
 			flex-wrap: nowrap;
