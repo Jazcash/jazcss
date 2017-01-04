@@ -1,67 +1,67 @@
-// // https://github.com/Jazcash/collist
-// // needs to match heights with JS on IE9
+// https://github.com/Jazcash/collist
+// needs to match heights with JS on IE9
 
-// .collist{
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	margin: 0;
-// 	padding: 0;
-// 	list-style-type: none;
-// 	& > *{
-// 		box-sizing: border-box;
-// 		vertical-align: top;
-// 	}
-// }
+.collist{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	& > *{
+		box-sizing: border-box;
+		vertical-align: top;
+	}
+}
 
-// .no-flexbox .collist > *{
-// 	display: inline-block;
-// 	margin-right: -4px;
-// }
+.no-flexbox .collist > *{
+	display: inline-block;
+	margin-right: -4px;
+}
 
-// @mixin collist($spacing){
-// 	@for $n from 1 through 12{
-// 		&.row-#{$n} > *{
-// 			width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
-// 			&:nth-child(#{$n}n + 1){
-// 				margin-left: 0;
-// 			}
-// 			&:nth-child(-n+#{$n}){
-// 				margin-top: 0;
-// 			}
-// 			&:not(:nth-child(-n+#{$n})){
-// 				margin-top: $spacing;
-// 			}
-// 			&:not(:nth-child(#{$n}n + 1)){
-// 				margin-left: $spacing;
-// 			}
-// 		}
-// 		@each $key, $val in $breakpoints{
-// 			&.#{$key}-row-#{$n} > *{
-// 				@include above($val){
-// 					width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
-// 					&:nth-child(#{$n}n + 1){
-// 						margin-left: 0;
-// 					}
-// 					&:nth-child(-n+#{$n}){
-// 						margin-top: 0;
-// 					}
-// 					&:not(:nth-child(-n+#{$n})){
-// 						margin-top: $spacing;
-// 					}
-// 					&:not(:nth-child(#{$n}n + 1)){
-// 						margin-left: $spacing;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+@mixin collist($spacing){
+	@for $n from 1 through 12{
+		&.row-#{$n} > *{
+			width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
+			&:nth-child(#{$n}n + 1){
+				margin-left: 0;
+			}
+			&:nth-child(-n+#{$n}){
+				margin-top: 0;
+			}
+			&:not(:nth-child(-n+#{$n})){
+				margin-top: $spacing;
+			}
+			&:not(:nth-child(#{$n}n + 1)){
+				margin-left: $spacing;
+			}
+		}
+		@each $key, $val in $breakpoints{
+			&.#{$key}-row-#{$n} > *{
+				@include above($val){
+					width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
+					&:nth-child(#{$n}n + 1){
+						margin-left: 0;
+					}
+					&:nth-child(-n+#{$n}){
+						margin-top: 0;
+					}
+					&:not(:nth-child(-n+#{$n})){
+						margin-top: $spacing;
+					}
+					&:not(:nth-child(#{$n}n + 1)){
+						margin-left: $spacing;
+					}
+				}
+			}
+		}
+	}
+}
 
-// .collist{
-// 	&.gutter{
-// 		@include collist($gutter);
-// 	}
-// 	&:not(.gutter){
-// 		@include collist(0);
-// 	}
-// }
+.collist{
+	&.gutter{
+		@include collist($gutter);
+	}
+	&:not(.gutter){
+		@include collist(0);
+	}
+}

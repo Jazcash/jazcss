@@ -1,0 +1,128 @@
+{{#extend "main"}}
+	{{#content "body"}}
+		<section>
+			<h2>Col</h2>
+			<p>
+				Cols provide a way of easily marking up simple, responsive layouts. Cols are <code>div</code> elements and must always belong to a <code>div.row</code>. Classes from <code>col-1</code> to <code>col-12</code> are base specifiers and should only be used on their own if that particular row doesn't need to be responsive. Otherwise, you can set col sizes based on the breakpoints in <code>variables.scss</code> by prepending two letter sizes to the col, as specified in the aforementioned file. For example:</p>
+			<p>
+				<code>div class="col-12 md-col-6"</code> would render the column 100% width for all viewport widths. Responsive col classes take precedence, so <code>md-col-6</code> wodivd render the column 50% width for viewports with a width  greater than the <code>md</code> breakpoint value.
+			</p>
+
+			<div class="section padded-v-xs">
+				<div class="row">
+					<div class="col-12 sm-col-3">
+						<div class="jazcss-item">Some longer text to show match heights</div>
+					</div>
+					<div class="col-12 sm-col-3">
+						<div class="jazcss-item">col-12 sm-col-3</div>
+					</div>
+					<div class="col-12 sm-col-6">
+						<div class="jazcss-item">col-12 sm-col-6</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="row gutter">
+					<div class="col-12 sm-col-3">
+						<div class="jazcss-item">col-12 sm-col-3</div>
+					</div>
+					<div class="col-12 sm-col-3">
+						<div class="jazcss-item">col-12 sm-col-3</div>
+					</div>
+					<div class="col-12 sm-col-6">
+						<div class="jazcss-item">col-12 sm-col-6</div>
+					</div>
+				</div>
+			</div>
+
+			<br>
+			<h3>Col-5th</h3>
+			<p>
+				<code>col-5th</code> provides a way to specify 20% width, as a typical 12 col system does not support this.
+			</p>
+
+			<div class="section padded-v-xs">
+				<div class="row">
+					<div class="col-12 sm-col-5th">
+						<div class="jazcss-item">col-12 sm-col-5th</div>
+					</div>
+					<div class="col-12 sm-col-5th">
+						<div class="jazcss-item">col-12 sm-col-5th</div>
+					</div>
+					<div class="col-12 sm-col-5th">
+						<div class="jazcss-item">col-12 sm-col-5th</div>
+					</div>
+					<div class="col-12 sm-col-5th">
+						<div class="jazcss-item">col-12 sm-col-5th</div>
+					</div>
+					<div class="col-12 sm-col-5th">
+						<div class="jazcss-item">col-12 sm-col-5th</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs margin-v-xs">
+				<div class="row gutter">
+					<div class="col-12 xs-col-5th">
+						<div class="jazcss-item">col-12 xs-col-5th</div>
+					</div>
+					<div class="col-12 xs-col-5th">
+						<div class="jazcss-item">col-12 xs-col-5th</div>
+					</div>
+					<div class="col-12 xs-col-5th">
+						<div class="jazcss-item">col-12 xs-col-5th</div>
+					</div>
+					<div class="col-12 xs-col-5th">
+						<div class="jazcss-item">col-12 xs-col-5th</div>
+					</div>
+					<div class="col-12 xs-col-5th">
+						<div class="jazcss-item">col-12 xs-col-5th</div>
+					</div>
+				</div>
+			</div>
+
+			<br>
+			<h2>Collist</h2>
+			<p>
+				Collist is a responsive layout system that allows you to arrange a list of elements in a grid-like fashion. To use it, simply add the <code>collist</code> class to a <code>div</code>. Like col, class <code>row-n</code> (where <code>n</code> is 1-12) provides a base width. You can then follow this with classes that specify how many jazcss-items to display per row at particular breakpoints. For example, the class <code>md-row-3</code> will show 3 jazcss-items per row for viewport widths greater than the <coede>md</coede> breakpoint. Greater breakpoints take precedence over smaller ones.
+			</p>
+
+			<div class="section padded-v-xs">
+				<div class="collist row-1 xs-row-2 sm-row-3 md-row-4">
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some more text to show match heights</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+				</div>
+			</div>
+
+			<br>
+
+			<h3>Collist with gutter</h3>
+
+			<div class="section padded-v-xs">
+				<div class="collist row-1 xs-row-2 sm-row-3 md-row-4 gutter">
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some more text to show match heights</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+					<div><div class="jazcss-item">Some text</div></div>
+				</div>
+			</div>
+		</section>
+	{{/content}}
+{{/extend}}

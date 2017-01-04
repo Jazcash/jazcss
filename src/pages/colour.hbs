@@ -1,0 +1,29 @@
+{{#extend "main"}}
+	{{#content "body"}}
+		<section>
+			<h2>Colour</h2>
+			<p>
+				A project's brand colours should be added to the <code>$colors</code> map in <code>_variables.scss</code>. If you don't have any particular names in mind for each colour, <a href="http://chir.ag/projects/name-that-color">this site</a> has suitable names based on hex colours. <a href="http://www.color-blindness.com/color-name-hue/">color-blindness.com</a> also provide a similar tool which also shows the hue for specific colours.
+			</p>
+			<p>
+				Qubase provides a way to apply your <code>$colors</code> colours as background-colour or text-colour using the <code>.bg-colourname</code> and <code>.fg-colourname</code> classes like so:
+			</p>
+		</section>
+
+		<section class="padded-v-md">
+			<div class="padded-md bg-nicered fg-white">
+				&lt;div class="padded-md bg-nicered fg-white"&gt;
+			</div>
+			<br>
+			<div class="padded-md bg-pear fg-nero">
+				&lt;div class="padded-md bg-pear fg-nero"&gt;
+			</div>
+		</section>
+
+		<section>
+			<h3>Color mixin</h3>
+			<p>To use your <code>$colors</code> variables in your actual SCSS, you can use the <code>color</code> mixin like so:</p>
+			<p><code>background-color: color(nicered);</code></p>
+		</section>
+	{{/content}}
+{{/extend}}

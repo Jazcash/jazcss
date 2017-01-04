@@ -6,7 +6,6 @@
 	@return null;
 }
 
-
 @function break($key) {
 	@if map-has-key($breakpoints, $key) {
 		@return map-get($breakpoints, $key);
@@ -14,7 +13,6 @@
 	@warn "Unknown `#{$key}` in $breakpoints.";
 	@return null;
 }
-
 
 @function color($key) {
 	@if map-has-key($colors, $key) {

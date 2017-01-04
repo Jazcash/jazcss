@@ -1,6 +1,3 @@
-$wrapperWidth: 960px; // 960, 1080, 1200 recommended
-$wrapperBreakoutWidth: 120px;
-
 $spacer: (
 	xs : 5px,
 	sm : 10px,
@@ -21,13 +18,18 @@ $breakpoints: (
 
 // colour name ideas - http://chir.ag/projects/name-that-color/#6195ED
 $colors: (
+	white      : #FFFFFF,
 	nero         : #222222,
 	white-smoke  : #FAFAFA,
 	mariner      : #306BCF,
-	qubared      : #C1202B,
-	qubared-light: #DD3340,
+	nicered      : #C1202B,
+	nicered-light: #DD3340,
 	ebony        : #1C1F28,
 	ebony-light  : #313646,
 	pear         : #BDC120,
 	pear-light   : #DBDD32
 );
+
+$wrapperWidth: 960px; // 960, 1080, 1200 recommended
+$wrapperBreakoutWidth: 120px;
+$gutter: map-get($spacer, md);

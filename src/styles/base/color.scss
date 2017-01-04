@@ -1,9 +1,9 @@
 /*
 	Usage:
 
-	<span class="bg-qubared fg-white">Hello</span>
+	<span class="bg-hotpink fg-white">Hello</span>
 
-	This would render "hello" in white text with a qubared background
+	This would render "hello" in white text with a hotpink background
 */
 
 @each $key, $val in $colors{
