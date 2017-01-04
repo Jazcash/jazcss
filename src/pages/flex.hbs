@@ -1,0 +1,83 @@
+{{#extend "main"}}
+	{{#content "body"}}
+		<section>
+			<h1>Flex</h1>
+			<p>
+				Flex is a layout system that utilises flexbox to provide an easy to way to quickly markup simple layouts. Below are some simple examples of what's possible using flex. All the flex classes used below also have graceful degradation and attempted layout consistency for browsers that don't support flexbox. Just try the page below in IE9 and inspect element to see how they work.
+			</p>
+			<div class="section padded-v-xs">
+				<div class="flex-row">
+					<div class="jazcss-item">This</div>
+					<div class="jazcss-item">is</div>
+					<div class="jazcss-item">a</div>
+					<div class="jazcss-item">flex</div>
+					<div class="jazcss-item">row</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-col">
+					<div class="jazcss-item">This</div>
+					<div class="jazcss-item">is</div>
+					<div class="jazcss-item">a</div>
+					<div class="jazcss-item">flex</div>
+					<div class="jazcss-item">col</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-row">
+					<div class="flex-left">
+						<div class="jazcss-item">flex-left</div>
+					</div>
+					<div class="flex-right">
+						<div class="jazcss-item">flex-right</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-row">
+					<div class="flex-left">
+						<div class="jazcss-item">flex-left</div>
+					</div>
+					<div class="flex-grow">
+						<div class="jazcss-item">flex-grow</div>
+					</div>
+					<div class="flex-right">
+						<div class="jazcss-item">flex-right</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-row flex-center-children-h">
+					<div class="jazcss-item">This element's parent has class flex-center-children-h</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-row">
+					<div class="jazcss-item flex-center-self-h">This element has class flex-center-self-h</div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-col" style="height: 200px">
+					<div class="flex-top"><div class="jazcss-item">flex-top</div></div>
+					<div class="flex-bottom"><div class="jazcss-item">flex-bottom</div></div>
+				</div>
+			</div>
+
+			<div class="section padded-v-xs">
+				<div class="flex-row flex-space-between">
+					<div class="jazcss-item">Parent</div>
+					<div class="jazcss-item">has</div>
+					<div class="jazcss-item">flex</div>
+					<div class="jazcss-item">space</div>
+					<div class="jazcss-item">between</div>
+				</div>
+			</div>
+		</section>
+	{{/content}}
+{{/extend}}

@@ -33,3 +33,4 @@ $colors: (
 $wrapperWidth: 960px; // 960, 1080, 1200 recommended
 $wrapperBreakoutWidth: 120px;
 $gutter: map-get($spacer, md);
+$maxCollistCols: 4; // always make this number the lowest it needs to be, it greatly affects filesize

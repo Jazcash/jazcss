@@ -19,7 +19,7 @@
 }
 
 @mixin collist($spacing){
-	@for $n from 1 through 12{
+	@for $n from 1 through $maxCollistCols{
 		&.row-#{$n} > *{
 			width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
 			&:nth-child(#{$n}n + 1){
