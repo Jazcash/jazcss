@@ -1,7 +1,7 @@
 {{#extend "main"}}
 	{{#content "body"}}
 		<article>
-			<section>
+			<section id="#top">
 				<h1>Heading 1</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis elementum urna vitae aliquam. Fusce eget massa diam <a href="">pellentesque in ex nisi</a>. Ut efficitur erat et pellentesque porta. Donec viverra nibh ut mauris efficitur hendrerit. Suspendisse feugiat ac nisl id aliquam. Aliquam erat volutpat. Sed mattis nisi nec arcu elementum imperdiet. Suspendisse eu neque dapibus, auctor sem ac, aliquet turpis.
@@ -51,9 +51,17 @@
 			<p>
 				Donec viverra nibh ut mauris efficitur hendrerit. Suspendisse feugiat ac nisl id aliquam. Aliquam erat volutpat. Sed mattis nisi nec arcu elementum imperdiet. Suspendisse eu neque dapibus, auctor sem ac, aliquet turpis.
 			</p>
-			<figure>
-			<img src="http://placehold.it/350x150" alt="Images should always have alt tags">
-			<figcaption>Image caption</figcaption>
+
+			<figure class="text-center">
+				<img src="https://unsplash.it/400/200" alt="Images should always have alt tags">
+				<figcaption>Image caption</figcaption>
+			</figure>
+
+			<figure class="text-center">
+				<a href="#top">
+					<img src="https://unsplash.it/400/200" alt="Images should always have alt tags">
+				</a>
+				<figcaption>Linked image</figcaption>
 			</figure>
 
 			<h5>Heading 5</h5>

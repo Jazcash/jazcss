@@ -1,0 +1,11 @@
+{{#extend "main"}}
+	{{#content "body"}}
+		<a href="#modal">Call the modal with data-remodal-id="modal"</a>
+
+		{{#extend "modal"}}
+			{{#content "content"}}
+				My Content
+			{{/content}}
+		{{/extend}}
+	{{/content}}
+{{/extend}}
