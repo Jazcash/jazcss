@@ -1,8 +1,8 @@
 $(document).on("opening", ".remodal", function () {
-	disableScroll();
+	//disableScroll();
 });
 
 $(document).on("closing", ".remodal", function () {
-	enableScroll();
+	//enableScroll();
 });
 
