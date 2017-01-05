@@ -95,9 +95,6 @@ gulp.task("browsersync", function(){
 	browserSync.init({
 		server: {
 			baseDir: "build",
-			serveStaticOptions: {
-				extensions: ['html']
-			},
 			index: "index.html",
 			port: 3001
 		}
