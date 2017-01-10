@@ -21,12 +21,12 @@
 		}
 		&:hover{
 			cursor: pointer;
-			background: #e8e8e8;
+			background-color: #e8e8e8;
 		}
 	}
 	&__content{
 		display: none;
 		padding: spacer(md);
-		background: #fafafa;
+		background-color: #fafafa;
 	}
 }
