@@ -1,0 +1,23 @@
+.tabarea{
+	&__tab{
+		display: inline-block;
+		margin-right: -5px;
+		padding: 10px;
+		background: #eee;
+		&:hover, &.active{
+			cursor: pointer;
+			background: #e8e8e8;
+		}
+	}
+	&__contents{
+		white-space: nowrap;
+		overflow: hidden;
+		background: #fafafa;
+	}
+	&__content{
+		width: 100%;
+		display: inline-block;
+		margin-right: -4px;
+		padding: spacer(md);
+	}
+}

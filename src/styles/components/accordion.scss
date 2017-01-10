@@ -1,0 +1,32 @@
+.accordion{
+	&__item{
+		margin-right: -4px;
+		&.open{
+			.accordion__title:after{
+				content: "\f078";
+			}
+		}
+	}
+	&__title{
+		position: relative;
+		background: #eee;
+		padding: 10px;
+		&:after{
+			position: absolute;
+			content: "\f053";
+			font-family: FontAwesome;
+			right: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&:hover{
+			cursor: pointer;
+			background: #e8e8e8;
+		}
+	}
+	&__content{
+		display: none;
+		padding: spacer(md);
+		background: #fafafa;
+	}
+}
