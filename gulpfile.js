@@ -1,3 +1,4 @@
+const fs           = require("fs");
 const gulp         = require("gulp");
 const plumber      = require("gulp-plumber");
 const runSequence  = require('run-sequence');
@@ -17,6 +18,8 @@ const cssnano      = require("cssnano");
 const del          = require('del');
 const hbLayouts    = require('handlebars-layouts');
 const browserSync  = require("browser-sync").create();
+
+let colors = {};
 
 gulp.task("styles", function(){
 	return gulp.src("src/styles/styles.scss")
@@ -86,6 +89,17 @@ gulp.task("fonts", function(){
 		.pipe(gulp.dest("build/fonts"));
 });
 
+gulp.task("colors", function(){
+	var fileStr = fs.readFileSync("src/styles/base/variables.scss", "utf-8");
+	var re = /\$colors\:\s([.\s\S][^;]*)/;
+	var matches = fileStr.match(re);
+	var colorStr = matches[1].slice(1, -1).replace(/\s/g, "").split(",");
+	for (let i=0; i<colorStr.length; i++){
+		let color = colorStr[i].split(":");
+		colors[color[0]] = color[1];
+	}
+});
+
 gulp.task("handlebars", function(){
 	return gulp.src("src/pages/**/*.hbs")
 		.pipe(plumber({errorHandler: function (err) {
@@ -96,6 +110,9 @@ gulp.task("handlebars", function(){
 			.partials("src/partials/**/*.hbs")
 			.partials("src/layouts/**/*.hbs")
 			.helpers(hbLayouts))
+			.data({
+				colors: colors
+			})
 		.pipe(rename({extname: ".html"}))
 		.pipe(gulp.dest("build"))
 });
@@ -105,7 +122,10 @@ gulp.task("browsersync", function(){
 		server: {
 			baseDir: "build",
 			index: "index.html",
-			port: 3001
+			port: 3001,
+			serveStaticOptions: {
+				extensions: ['html']
+			}
 		}
 	});
 	gulp.start("watch");
@@ -137,7 +157,7 @@ gulp.task("build", ["clean"], function(){
 });
 
 gulp.task("serve", function(){
-	runSequence("clean", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
+	runSequence("clean", "colors", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
 });
 
 gulp.task("default", [

@@ -1,0 +1,18 @@
+{{#extend "main"}}
+	{{#content "body"}}
+		<div class="wrapped">
+			<div class="collist row-1 sm-row-2">
+				{{#each colors}}
+					<div class="color-block bg-{{@key}}">
+						<div class="color-block__name">
+							{{@key}}
+						</div>
+						<div class="color-block__hex">
+							{{this}}
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/content}}
+{{/extend}}

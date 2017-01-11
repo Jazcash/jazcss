@@ -6,3 +6,18 @@ html.remodal-is-locked{
 body{
 	padding-right: 0 !important;
 }
+
+.color-block{
+	padding: 20px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	&__name{
+		mix-blend-mode: difference;
+		padding: 5px;
+	}
+	&__hex{
+		mix-blend-mode: difference;
+		font-weight: 100;
+	}
+}
