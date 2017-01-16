@@ -12,10 +12,3 @@
 .text-right{
 	text-align: right;
 }
-
-.noscroll{
-	overflow: hidden;
-	::-webkit-scrollbar{
-		visibility: hidden;
-	}
-}

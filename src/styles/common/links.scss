@@ -5,6 +5,13 @@ a{
 	}
 }
 
+.btn > i:first-child{
+	margin-right: 7px;
+}
+.btn > i:last-child{
+	margin-left: 7px;
+}
+
 // style a link to look like button, this is called a link-button
 .btn{
 	display: inline-block;
@@ -18,8 +25,5 @@ a{
 		cursor: pointer;
 		color: #fff;
 		background: lighten(color(nero), 5%);
-	}
-	& > i{
-		margin-right: 7px;
 	}
 }

@@ -1,0 +1,14 @@
+@each $key, $val in $breakpoints{
+	.show-#{$key}{
+		display: none;
+		@include above($val){
+			display: inherit;
+		}
+	}
+	.hide-#{$key}{
+		display: inherit;
+		@include above($val){
+			display: none;
+		}
+	}
+}

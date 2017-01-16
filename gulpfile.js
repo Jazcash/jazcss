@@ -29,7 +29,7 @@ gulp.task("styles", function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		.pipe(wait(500)) // this line is if you're getting @import errors when saving .scss (likely on slower machines)
+		//.pipe(wait(750)) // uncomment this line if you're getting @import errors when saving .scss (likely on slower machines)
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
