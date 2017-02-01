@@ -12,7 +12,7 @@ $wrapperWidth: 960px; // 960, 1080, 1200 recommended
 $wrapperBreakoutWidth: 120px;
 $mobilePadding: 15px;
 $gutter: map-get($spacer, md);
-$maxCollistCols: 4; // always make this number the lowest it needs to be, it greatly affects filesize
+$maxCollistCols: 5; // always make this number the lowest it needs to be, it greatly affects filesize
 
 $breakpoints: (
 	xs     : 350px,  // older smartphones

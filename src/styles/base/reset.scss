@@ -4,10 +4,21 @@
 	& > li{
 		list-style-type: none;
 	}
+	& > a{
+		text-decoration: none;
+	}
 }
 
 button.reset{
 	&:hover{
 		background-color: inherit;
 	}
+}
+
+li.reset{
+	list-style-type: none;
+}
+
+a.reset{
+	text-decoration: none;
 }

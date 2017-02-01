@@ -1,3 +1,4 @@
+/// <binding ProjectOpened='build, watch' />
 const fs           = require("fs");
 const gulp         = require("gulp");
 const plumber      = require("gulp-plumber");
@@ -29,7 +30,7 @@ gulp.task("styles", function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		//.pipe(wait(750)) // uncomment this line if you're getting @import errors when saving .scss (likely on slower machines)
+		.pipe(wait(1000)) // this line is if you're getting @import errors when saving .scss (likely on slower machines)
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
@@ -109,10 +110,11 @@ gulp.task("handlebars", function(){
 		.pipe(hb()
 			.partials("src/partials/**/*.hbs")
 			.partials("src/layouts/**/*.hbs")
-			.helpers(hbLayouts))
+			.helpers(hbLayouts)
 			.data({
 				colors: colors
 			})
+		)
 		.pipe(rename({extname: ".html"}))
 		.pipe(gulp.dest("build"))
 });
@@ -133,6 +135,7 @@ gulp.task("browsersync", function(){
 
 gulp.task("watch", function(){
 	gulp.watch("src/styles/**/*.{css,scss}", ["styles"]);
+	gulp.watch("Frontend/src/styles/base/variables.scss", ["colors", "handlebars"]);
 	gulp.watch("src/scripts/**/*.js", ["scripts"]);
 	gulp.watch("src/fonts/**/*", ["fonts"]);
 	gulp.watch("src/images/**/*.{png,jpg,gif}", ["images"]);
@@ -154,6 +157,7 @@ gulp.task("build", ["clean"], function(){
 	gulp.start("scripts");
 	gulp.start("fonts");
 	gulp.start("images");
+	gulp.start("videos");
 });
 
 gulp.task("serve", function(){

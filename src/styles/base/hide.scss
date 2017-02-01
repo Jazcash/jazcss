@@ -1,0 +1,20 @@
+.hide{
+	&-above{
+		@each $key, $val in $breakpoints{
+			&-#{$key}{
+				@include above($key){
+					display: none;
+				}
+			}
+		}
+	}
+	&-below{
+		@each $key, $val in $breakpoints{
+			&-#{$key}{
+				@include below($key){
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -23,7 +23,8 @@
 		&.row-#{$n} > *{
 			width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
 			&:nth-child(#{$n}n + 1){
-				margin-left: 0;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			&:nth-child(-n+#{$n}){
 				margin-top: 0;
@@ -40,7 +41,8 @@
 				@include above($val){
 					width: calc((100% - (#{$spacing} * (#{$n} - 1))) / #{$n});
 					&:nth-child(#{$n}n + 1){
-						margin-left: 0;
+						margin-left: auto;
+						margin-right: auto;
 					}
 					&:nth-child(-n+#{$n}){
 						margin-top: 0;
