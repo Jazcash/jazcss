@@ -7,12 +7,12 @@
 */
 
 @each $key, $val in $colors{
-	&.bg{ // background
+	.bg{ // background
 		&-#{$key}{
 			background: $val;
 		}
 	}
-	&.fg{ // foreground
+	.fg{ // foreground
 		&-#{$key}{
 			color: $val;
 		}

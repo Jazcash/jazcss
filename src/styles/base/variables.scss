@@ -1,3 +1,9 @@
+$wrapperWidth: 960px;
+$wrapperBreakoutWidth: 120px;
+$mobilePadding: 15px;
+$gutter: 15px;
+$maxCollistCols: 5; // always make this number the lowest it needs to be, it greatly affects filesize
+
 $spacer: (
 	none: 0px,
 	xs : 5px,
@@ -8,28 +14,22 @@ $spacer: (
 	xxl: 30px
 );
 
-$wrapperWidth: 960px; // 960, 1080, 1200 recommended
-$wrapperBreakoutWidth: 120px;
-$mobilePadding: 15px;
-$gutter: map-get($spacer, md);
-$maxCollistCols: 5; // always make this number the lowest it needs to be, it greatly affects filesize
-
 $breakpoints: (
-	xs     : 350px,  // older smartphones
-	sm     : 480px,  // newer smartphones
-	md     : 768px,  // tablets and old laptops
-	wrapper: $wrapperWidth + ($mobilePadding * 3), // site wrapper
-	lg     : 1024px, // new laptops and small monitors
-	xl     : 1440px, // medium sized monitors
-	xxl    : 1920px  // large sized monitors
+	xs     : 350px,
+	sm     : 480px,
+	md     : 768px,
+	wrapper: $wrapperWidth + ($mobilePadding * 3),
+	lg     : 1024px,
+	xl     : 1440px,
+	xxl    : 1920px
 );
 
 // colour name ideas - http://chir.ag/projects/name-that-color/#6195ED
 $colors: (
-	white      : #FFFFFF,
-	nero         : #222222,
 	white-smoke  : #FAFAFA,
-	mariner      : #306BCF,
+	white      : #FFFFFF,
+	black      : #000000,
+	nero         : #222222,
 	nicered      : #C1202B,
 	nicered-light: #DD3340,
 	ebony        : #1C1F28,

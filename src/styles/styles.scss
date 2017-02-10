@@ -3,16 +3,12 @@
 @import "base/normalise";
 @import "base/reset";
 @import "base/variables";
-@import "base/color";
+@import "base/mixins";
+@import "base/helpers/**";
+@import "base/layout/**";
 @import "base/fonts";
-@import "base/utility";
-@import "base/animation";
 @import "base/page";
-@import "base/background";
-@import "base/hide";
 @import "base/misc";
-
-@import "layout/*";
 
 @import "common/*";
 

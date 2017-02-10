@@ -1,3 +1,27 @@
+@function spacer($key) {
+	@if map-has-key($spacer, $key) {
+		@return map-get($spacer, $key);
+	}
+	@warn "Unknown `#{$key}` in $spacer.";
+	@return null;
+}
+
+@function break($key) {
+	@if map-has-key($breakpoints, $key) {
+		@return map-get($breakpoints, $key);
+	}
+	@warn "Unknown `#{$key}` in $breakpoints.";
+	@return null;
+}
+
+@function color($key) {
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
+	@warn "Unknown `#{$key}` in $colors.";
+	@return null;
+}
+
 // https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 @mixin below($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint);

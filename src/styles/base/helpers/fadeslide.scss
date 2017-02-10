@@ -1,0 +1,12 @@
+.fadeslide{
+	transition: .4s transform, .4s opacity;
+	opacity: 0;
+	&-above{ @extend .fadeslide; transform: translateY(-50px); }
+	&-below{ @extend .fadeslide; transform: translateY(50px); }
+	&-left{  @extend .fadeslide; transform: translateX(-50px); }
+	&-right{ @extend .fadeslide; transform: translateX(50px); }
+	&-active{
+		transform: translateX(0) translateY(0);
+		opacity: 1;
+	}
+}
