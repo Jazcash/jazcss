@@ -1,26 +1,28 @@
-/// <binding ProjectOpened='build, watch' />
+/// <binding ProjectOpened="build, watch" />
 const fs           = require("fs");
 const gulp         = require("gulp");
 const plumber      = require("gulp-plumber");
-const runSequence  = require('run-sequence');
+const runSequence  = require("run-sequence");
 const sourcemaps   = require("gulp-sourcemaps");
 const rename       = require("gulp-rename");
 const sassGlob     = require("gulp-sass-glob");
 const sass         = require("gulp-sass");
-const babel        = require('gulp-babel');
+const babel        = require("gulp-babel");
 const concat       = require("gulp-concat");
 const uglify       = require("gulp-uglify");
 const wait         = require("gulp-wait");
-const watch        = require('gulp-watch');
-const hb           = require('gulp-hb');
+const watch        = require("gulp-watch");
+const hb           = require("gulp-hb");
 const postcss      = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano      = require("cssnano");
-const del          = require('del');
-const hbLayouts    = require('handlebars-layouts');
+const del          = require("del");
+const hbLayouts    = require("handlebars-layouts");
+const hbHelpers    = require("handlebars-helpers");
 const browserSync  = require("browser-sync").create();
 
 let colors = {};
+let pages = {};
 
 gulp.task("styles", function(){
 	return gulp.src("src/styles/styles.scss")
@@ -30,7 +32,7 @@ gulp.task("styles", function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		.pipe(wait(1000)) // this line is if you're getting @import errors when saving .scss (likely on slower machines)
+		.pipe(wait(1000)) // this line is if you"re getting @import errors when saving .scss (likely on slower machines)
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
@@ -111,6 +113,7 @@ gulp.task("handlebars", function(){
 			.partials("src/partials/**/*.hbs")
 			.partials("src/layouts/**/*.hbs")
 			.helpers(hbLayouts)
+			.helpers("./node_modules/handlebars-helpers/lib/**/!(object).js")
 			.data({
 				colors: colors
 			})
@@ -126,7 +129,7 @@ gulp.task("browsersync", function(){
 			index: "index.html",
 			port: 3001,
 			serveStaticOptions: {
-				extensions: ['html']
+				extensions: ["html"]
 			}
 		}
 	});

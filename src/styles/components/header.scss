@@ -1,8 +1,45 @@
 .header{
 	background: #ddd;
+	a{
+		text-decoration: none;
+	}
+	ul, li{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
 	&__nav{
-		li a{
+		/* Behold, a giant cluterfuck: */
+		& > li > a:hover{
+			background-color: #f5f5f5;
+		}
+		& > li > a,
+		& > li > span{
 			padding: 10px;
+			display: inline-block;
+		}
+		& > li:hover span{
+			background-color: #f5f5f5;
+			cursor: default;
+		}
+		& > li > ul {
+			position: absolute;
+			display: none;
+			z-index: 2;
+			&:hover{
+				display: block;
+			}
+		}
+		& > li > span:hover + ul{
+			display: block;
+		}
+		& > li > ul > li > a{
+			padding: 10px 20px;
+			display: block;
+			background-color: #f5f5f5;
+			&:hover{
+				background-color: #fafafa;
+			}
 		}
 	}
 }
