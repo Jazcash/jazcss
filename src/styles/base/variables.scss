@@ -1,8 +1,12 @@
-$wrapperWidth: 960px;
+$wrapperWidth        : 960px;
 $wrapperBreakoutWidth: 120px;
-$mobilePadding: 15px;
-$gutter: 15px;
-$maxCollistCols: 5; // always make this number the lowest it needs to be, it greatly affects filesize
+$mobilePadding       : 15px;
+$gutter              : 15px;
+$maxCollistCols      : 5; // always make this number the lowest it needs to be, it greatly affects filesize
+$bodyBackgroundColor : #F5F5F5;
+$bodyTextColor       : #222;
+$bodyFont            : "Open Sans", sans-serif;
+$mainBackgroundColor : #FFF;
 
 $spacer: (
 	none: 0px,

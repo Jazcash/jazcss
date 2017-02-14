@@ -6,19 +6,19 @@ h1,h2,h3,h4,h5,h6,
 	line-height: 120%;
 }
 
-h1,.h1{@include font-size(36px, 48px);}
-h2,.h2{@include font-size(32px, 40px);}
-h3,.h3{@include font-size(28px, 32px);}
-h4,.h4{@include font-size(24px, 26px);}
-h5,.h5{@include font-size(20px, 22px);}
-h6,.h6{@include font-size(16px, 18px);}
+h1,.h1{ @include fluid-type(500px, $wrapperWidth, 30px, 48px); }
+h2,.h2{ @include fluid-type(500px, $wrapperWidth, 24px, 36px); }
+h3,.h3{ @include fluid-type(500px, $wrapperWidth, 20px, 32px); }
+h4,.h4{ @include fluid-type(500px, $wrapperWidth, 18px, 24px); }
+h5,.h5{ @include fluid-type(500px, $wrapperWidth, 16px, 20px); }
+h6,.h6{ @include fluid-type(500px, $wrapperWidth, 14px, 16px); }
 
 p, .p{
-	font-family: "Open Sans", sans-serif;
-	line-height: 150%;
-	@include font-size(14px, 16px);
+	line-height: 1.8;
+	@include fluid-type(500px, $wrapperWidth, 14px, 16px);
 	&.lead{
-		@include font-size(16px, 20px);
+		@include fluid-type(500px, $wrapperWidth, 16px, 18px);
+		font-weight: 600;
 	}
 }
 
@@ -43,7 +43,6 @@ blockquote{
 	border: 1px solid rgba(#000, 0.2);
 	border-radius: 2px;
 	padding: 0 4px;
-	font-size: 14px;
 	white-space: nowrap;
 }
 

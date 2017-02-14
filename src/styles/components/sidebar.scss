@@ -1,0 +1,15 @@
+.sidebar{
+	margin: 0;
+	padding: 0;
+	li{
+		list-style-type: none;
+	}
+	a{
+		display: block;
+		text-decoration: none;
+		padding: spacer(xs);
+		&:hover{
+			background-color: #eee;
+		}
+	}
+}

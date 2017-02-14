@@ -3,14 +3,14 @@
 }
 
 body{
-	background-color: #eee;
-	color: color(nero);
-	font-family: "Open Sans", sans-serif;
+	font-family: $bodyFont;
+	color: $bodyTextColor;
+	background-color: $bodyBackgroundColor;
+	overflow-y: scroll;
 	-webkit-font-smoothing: antialiased; // standardise font appearance between OS'
 	-moz-osx-font-smoothing: grayscale;
-	overflow-y: scroll;
 }
 
 main{
-	background: #fff;
+	background: $mainBackgroundColor;
 }

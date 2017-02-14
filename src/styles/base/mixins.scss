@@ -22,7 +22,6 @@
 	@return null;
 }
 
-// https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 @mixin below($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint);
 	@if $value != null {
@@ -33,6 +32,7 @@
 		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.";
 	}
 }
+
 @mixin above($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint);
 	@if $value != null {
@@ -44,15 +44,28 @@
 	}
 }
 
-@mixin font-size($min, $max){
-	font-size: $min;
-	$range: $max - $min;
-	$unit: $range / length($breakpoints);
-	$i: 0;
-	@each $key, $val in $breakpoints{
-		$i: $i + 1;
-		@include above($val){
-			font-size: (($unit * $i) + $min);
+// https://www.smashingmagazine.com/2016/05/fluid-typography/
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
 		}
+	} @else {
+		@error "Detected mixed units. Please use the same units for all parameters. " + $u1 +", " + $u2 + ", " + $u3 +", "+ $u4;
 	}
 }

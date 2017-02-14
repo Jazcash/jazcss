@@ -3,10 +3,17 @@
 		<section>
 			<h1>Flex</h1>
 			<p>
-				Flex is a layout system that utilises flexbox to provide an easy to way to quickly markup simple layouts. Below are some simple examples of what's possible using flex. All the flex classes used below also have graceful degradation and attempted layout consistency for browsers that don't support flexbox. Just try the page below in IE9 and inspect element to see how they work.
+				Flex is a layout system that utilises flexbox to provide an easy to way to quickly markup simple layouts. Below are some simple examples of what's possible using flex. Make sure to check for <a href="http://caniuse.com/#feat=flexbox">flexbox browser support</a> before using this in your project. Jazcss provides is very basic fallback for browsers that don't support flexbox. Check the <code>layout/flex.scss</code> file to see how it works.
 			</p>
+			<p>As for learning how to use flexbox, here are some handy resources you should find useful:</p>
+			<ul>
+				<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks guide and cheatsheet</a></li>
+				<li><a href="http://flexboxfroggy.com/">Frogger-like game that teaches flexbox</a></li>
+				<li><a href="http://www.flexboxdefense.com/">Tower defense version</a></li>
+			</ul>
+			<hr>
 			<div class="section padded-v-xs">
-				<div class="flex-row">
+				<div class="flex-row" style="background-color: #fbfbfb">
 					<div class="jazcss-item">This</div>
 					<div class="jazcss-item">is</div>
 					<div class="jazcss-item">a</div>
@@ -26,7 +33,7 @@
 			</div>
 
 			<div class="section padded-v-xs">
-				<div class="flex-row">
+				<div class="flex-row" style="background-color: #fbfbfb">
 					<div class="flex-left">
 						<div class="jazcss-item">flex-left</div>
 					</div>
@@ -51,10 +58,10 @@
 			</div>
 
 			<div class="section padded-v-xs">
-				<div class="flex-row">
+				<div class="flex-row" style="background-color: #fbfbfb">
 					<div class="jazcss-item center">This element's parent has class .flex-center</div>
 				</div>
-				<div class="flex-row">
+				<div class="flex-row" style="background-color: #fbfbfb">
 					<div class="jazcss-item center">This element has class .center (no flex)</div>
 				</div>
 			</div>
@@ -67,7 +74,7 @@
 			</div>
 
 			<div class="section padded-v-xs">
-				<div class="flex-row flex-space-between">
+				<div class="flex-row flex-space-between" style="background-color: #fbfbfb">
 					<div class="jazcss-item">Parent</div>
 					<div class="jazcss-item">has</div>
 					<div class="jazcss-item">flex</div>
@@ -77,7 +84,7 @@
 			</div>
 
 			<div class="section padded-v-xs">
-				<div class="flex-row flex-space-around">
+				<div class="flex-row flex-space-around" style="background-color: #fbfbfb">
 					<div class="jazcss-item">Parent</div>
 					<div class="jazcss-item">has</div>
 					<div class="jazcss-item">flex</div>

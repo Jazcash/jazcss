@@ -10,15 +10,15 @@
 	}
 	&__nav{
 		/* Behold, a giant cluterfuck: */
-		& > li > a:hover{
-			background-color: #f5f5f5;
-		}
 		& > li > a,
 		& > li > span{
 			padding: 10px;
 			display: inline-block;
 		}
-		& > li:hover span{
+		& > li > a:hover{
+			background-color: #f5f5f5;
+		}
+		& > li:hover > span{
 			background-color: #f5f5f5;
 			cursor: default;
 		}

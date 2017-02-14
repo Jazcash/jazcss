@@ -1,5 +1,17 @@
 {{#extend "generic"}}
 	{{#content "content"}}
-		Jazcss
+		<h1>Jazcss</h1>
+		<p>
+			Jazcss is my frontend framework that I use whenever I start a new project. It contains all the usual things you'd expect from any framework, plus a few extras. It's built to be responsive, customisable and semantically correct as much as possible. This site is using the latest version of Jazcss and shows off all the things it can do. It's also incredibly lightweight, weighing in at only 6KB after gzipping.
+		</p>
+		<h2>Directory structure</h2>
+		<p>Jazcss' style directory breaks files down as follows:</p>
+		<ul>
+			<li><strong>Base</strong> - Contains files that are core to the framework and shouldn't need much changing other than <code>variables.scss</code></li>
+			<li><strong>Helpers</strong> - Classes that provide useful functionality</li>
+			<li><strong>Layout</strong> - Like helpers, but specifically focussed on element positioning</li>
+			<li><strong>Common</strong> - Style rules that target standard HTML elements such as headings</li>
+			<li><strong>Components</strong> - The bread and butter of your project. Every partial should have a corresponding file here</li>
+		</ul>
 	{{/content}}
 {{/extend}}

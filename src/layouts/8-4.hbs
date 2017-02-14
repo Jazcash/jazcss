@@ -1,11 +1,13 @@
-{{#extend "main"}}
-	{{#content "body"}}
+{{#extend "generic"}}
+	{{#content "content"}}
 		<div class="row gutter">
-			<div class="col-12 md-col-8">
+			<div class="col-12 md-col-8 padded-v-md">
 				{{#block "8"}}{{/block}}
 			</div>
 			<div class="col-12 md-col-4">
-				{{#block "4"}}{{/block}}
+				<div class="bg-white-smoke padded-md">
+					{{#block "4"}}{{/block}}
+				</div>
 			</div>
 		</div>
 	{{/content}}

@@ -21,3 +21,13 @@ body{
 		font-weight: 100;
 	}
 }
+
+.jazcss{
+	&-item{
+		height: 100%;
+		padding: spacer(sm);
+		color: #aaa;
+		border: 1px solid #aaa;
+		background: #eee;
+	}
+}

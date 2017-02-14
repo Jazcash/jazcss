@@ -1,19 +1,16 @@
-@import "mixins/*";
-
-@import "base/normalise";
-@import "base/reset";
 @import "base/variables";
 @import "base/mixins";
-@import "base/helpers/**";
-@import "base/layout/**";
 @import "base/fonts";
 @import "base/page";
 @import "base/misc";
+@import "base/reset";
+
+@import "helpers/**";
+
+@import "layout/**";
 
 @import "common/*";
 
 @import "components/*";
 
 @import "vendor/*";
-
-@import "jazcss";
