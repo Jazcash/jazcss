@@ -1,9 +1,9 @@
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
 	margin: 0;
-	margin-bottom: spacer(md);
+	//margin-bottom: spacer(sm);
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	line-height: 120%;
+	line-height: 1.2;
 }
 
 h1,.h1{ @include fluid-type(500px, $wrapperWidth, 30px, 48px); }
@@ -15,6 +15,7 @@ h6,.h6{ @include fluid-type(500px, $wrapperWidth, 14px, 16px); }
 
 p, .p{
 	line-height: 1.8;
+	margin: spacer(md) 0;
 	@include fluid-type(500px, $wrapperWidth, 14px, 16px);
 	&.lead{
 		@include fluid-type(500px, $wrapperWidth, 16px, 18px);
@@ -24,6 +25,7 @@ p, .p{
 
 li{
 	@extend .p;
+	margin: 0;
 }
 
 blockquote{
@@ -47,5 +49,11 @@ blockquote{
 }
 
 small{
-	font-size: 60%;
+	font-size: 75%;
+}
+
+strong{
+	font-weight: 600;
+	&.stronger{ font-weight: 700; }
+	&.strongest{ font-weight: 800; }
 }

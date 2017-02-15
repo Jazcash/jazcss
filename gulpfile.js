@@ -20,9 +20,9 @@ const del          = require("del");
 const hbLayouts    = require("handlebars-layouts");
 const hbHelpers    = require("handlebars-helpers");
 const browserSync  = require("browser-sync").create();
+const packageFile  = require("./package");
 
 let colors = {};
-let pages = {};
 
 gulp.task("styles", function(){
 	return gulp.src("src/styles/styles.scss")
@@ -115,7 +115,8 @@ gulp.task("handlebars", function(){
 			.helpers(hbLayouts)
 			.helpers("./node_modules/handlebars-helpers/lib/**/!(object).js")
 			.data({
-				colors: colors
+				colors: colors,
+				title: packageFile.name[0].toUpperCase() + packageFile.name.substr(1)
 			})
 		)
 		.pipe(rename({extname: ".html"}))
@@ -138,7 +139,7 @@ gulp.task("browsersync", function(){
 
 gulp.task("watch", function(){
 	gulp.watch("src/styles/**/*.{css,scss}", ["styles"]);
-	gulp.watch("Frontend/src/styles/base/variables.scss", ["colors", "handlebars"]);
+	gulp.watch("Frontend/src/styles/base/variables.scss", ["colors", "handlebars", "watch:handlebars"]);
 	gulp.watch("src/scripts/**/*.js", ["scripts"]);
 	gulp.watch("src/fonts/**/*", ["fonts"]);
 	gulp.watch("src/images/**/*.{png,jpg,gif}", ["images"]);

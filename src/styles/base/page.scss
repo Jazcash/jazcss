@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+html, body{
+	height: 100%;
+}
+
 body{
 	font-family: $bodyFont;
 	color: $bodyTextColor;
@@ -12,5 +16,9 @@ body{
 }
 
 main{
-	background: $mainBackgroundColor;
+	background-color: $mainBackgroundColor;
+	min-width: $wrapperWidth;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
