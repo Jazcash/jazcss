@@ -139,7 +139,7 @@ gulp.task("browsersync", function(){
 
 gulp.task("watch", function(){
 	gulp.watch("src/styles/**/*.{css,scss}", ["styles"]);
-	gulp.watch("Frontend/src/styles/base/variables.scss", ["colors", "handlebars", "watch:handlebars"]);
+	gulp.watch("src/styles/base/variables.scss", ["colors", "handlebars", "watch:handlebars"]);
 	gulp.watch("src/scripts/**/*.js", ["scripts"]);
 	gulp.watch("src/fonts/**/*", ["fonts"]);
 	gulp.watch("src/images/**/*.{png,jpg,gif}", ["images"]);
