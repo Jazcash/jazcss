@@ -15,7 +15,7 @@ h6,.h6{ @include fluid-type(500px, $wrapperWidth, 14px, 16px); }
 
 p, .p{
 	line-height: 1.8;
-	margin: spacer(md) 0;
+	margin: spacer(sm) 0;
 	@include fluid-type(500px, $wrapperWidth, 14px, 16px);
 	&.lead{
 		@include fluid-type(500px, $wrapperWidth, 16px, 18px);
