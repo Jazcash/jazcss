@@ -27,12 +27,12 @@ let colors = {};
 gulp.task("styles", function(){
 	return gulp.src("src/styles/styles.scss")
 		.pipe(plumber({errorHandler: function (err) {
-			console.log(err);
+			console.log(err.formatted);
 			this.emit("end");
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		.pipe(wait(1000)) // this line is if you"re getting @import errors when saving .scss (likely on slower machines)
+		.pipe(wait(100)) // fixes issues with Visual Studio Code and SublimeText with atomic_save: false
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
@@ -155,17 +155,12 @@ gulp.task("clean", function(){
 	return del(["build/**/*"]);
 });
 
-gulp.task("build", ["clean"], function(){
-	gulp.start("handlebars");
-	gulp.start("styles");
-	gulp.start("scripts");
-	gulp.start("fonts");
-	gulp.start("images");
-	gulp.start("videos");
+gulp.task("build", function(){
+	return runSequence("clean", "colors", ["handlebars", "styles", "scripts", "fonts", "videos", "images"]);
 });
 
 gulp.task("serve", function(){
-	runSequence("clean", "colors", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
+	return runSequence("clean", "colors", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
 });
 
 gulp.task("default", [
