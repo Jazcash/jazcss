@@ -32,7 +32,7 @@ gulp.task("styles", function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		.pipe(wait(100)) // fixes issues with Visual Studio Code and SublimeText with atomic_save: false
+		.pipe(wait(100)) // fixes issues with Visual Studio Code and SublimeText with atomic_save: false - increase this value if you get scss import errors
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),

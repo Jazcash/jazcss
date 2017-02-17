@@ -10,22 +10,23 @@
 			flex-direction: column;
 			flex-wrap: wrap;
 		}
-		&-left{ margin-right: auto;}
-		&-right{ margin-left: auto;}
-		&-top{ margin-bottom: auto;}
-		&-bottom{ margin-top: auto;}
-		&-wrap{flex-wrap: wrap;}
-		&-nowrap{flex-wrap: nowrap;}
-		&-grow{flex-grow: 1;}
-		&-shrink{flex-shrink: 1;}
+		&-left{   margin-right: auto; }
+		&-right{  margin-left: auto; }
+		&-top{    margin-bottom: auto; }
+		&-bottom{ margin-top: auto; }
+		&-wrap{   flex-wrap: wrap; }
+		&-nowrap{ flex-wrap: nowrap; }
+		&-grow{   flex-grow: 1; }
+		&-shrink{ flex-shrink: 1; }
 		&-center{
 			justify-content: center;
 			align-items: center;
 		}
-		&-center-row{justify-content: center;}
-		&-center-col{align-items: center;}
-		&-space-around{justify-content: space-around;}
-		&-space-between{justify-content: space-between;}
+		&-center-self{   align-self: center; }
+		&-center-row{    justify-content: center; }
+		&-center-col{    align-items: center; }
+		&-space-around{  justify-content: space-around; }
+		&-space-between{ justify-content: space-between; }
 	}
 }
 .no-flexbox{
@@ -51,7 +52,11 @@
 		&-right{
 			float: right;
 		}
-		&-center{text-align: center;}
-		&-center-row{text-align: center;}
+		&-center{
+			text-align: center;
+		}
+		&-center-row{
+			text-align: center;
+		}
 	}
 }
