@@ -1,3 +1,8 @@
 .footer{
 	background: #ddd;
+	&__url{
+		@include below(650px){
+			display: none;
+		}
+	}
 }

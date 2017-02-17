@@ -1,4 +1,6 @@
 .wrapped{
+	width: $wrapperWidth;
+	@include below($wrapperWidth){ width: 100%; }
 	max-width: $wrapperWidth;
 	margin-left: auto;
 	margin-right: auto;
