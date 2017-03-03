@@ -60,10 +60,13 @@
 }
 
 .collist{
+	@include collist(0);
 	&.gutter{
-		@include collist($gutter);
+		@include collist(spacer(md));
 	}
-	&:not(.gutter){
-		@include collist(0);
+	@each $key, $val in $spacer{
+		&.gutter-#{$key}{
+			@include collist($val);
+		}
 	}
 }
