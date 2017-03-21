@@ -1,0 +1,46 @@
+/*
+	Examples
+
+	margin-md: spaces an element by spacer-md on all sides
+	margin-v-sm: spaces an element by spacer-sm on top and bottom
+	margin-v-xs margin-h-xl: spaces an element by spacer-xs on
+	top and bottom and spacer-xl on left and right
+*/
+
+.margin{
+	@each $key, $val in $spacer{
+		&-#{$key}{
+			margin: $val;
+		}
+		&-h-#{$key}{
+			margin-left: $val;
+			margin-right: $val;
+		}
+		&-v-#{$key}{
+			margin-top: $val;
+			margin-bottom: $val;
+		}
+	}
+}
+
+@each $key, $val in $breakpoints{
+	&.#{$key}{
+		@include above($val){
+			&-margin{
+				@each $key, $val in $spacer{
+					&-#{$key}{
+						margin: $val;
+					}
+					&-h-#{$key}{
+						margin-left: $val;
+						margin-right: $val;
+					}
+					&-v-#{$key}{
+						margin-top: $val;
+						margin-bottom: $val;
+					}
+				}
+			}
+		}
+	}
+}

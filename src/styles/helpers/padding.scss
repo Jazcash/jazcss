@@ -1,13 +1,14 @@
 /*
 	Examples
 
-	padded-md: pads an element by spacer-md on all sides
-	padded-v-sm: pads an element by spacer-sm on top and bottom
-	padded-v-xs padded-h-xl: pads an element by spacer-xs on
+	padding-md: pads an element by spacer-md on all sides
+	padding-v-sm: pads an element by spacer-sm on top and bottom
+	padding-v-xs padding-h-xl: pads an element by spacer-xs on
 	top and bottom and spacer-xl on left and right
+	padding-h-
 */
 
-.padded{
+.padding{
 	@each $key, $val in $spacer{
 		&-#{$key}{
 			padding: $val;
@@ -26,7 +27,7 @@
 @each $key, $val in $breakpoints{
 	&.#{$key}{
 		@include above($val){
-			&-padded{
+			&-padding{
 				@each $key, $val in $spacer{
 					&-#{$key}{
 						padding: $val;

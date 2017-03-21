@@ -60,3 +60,20 @@
 		}
 	}
 }
+
+.order{
+	&-0{ order: 0; }
+	&-1{ order: 1; }
+	&-2{ order: 2; }
+}
+@each $key, $val in $breakpoints{
+	&.#{$key}{
+		@include above($val){
+			&-order{
+				&-0{ order: 0; }
+				&-1{ order: 1; }
+				&-2{ order: 2; }
+			}
+		}
+	}
+}

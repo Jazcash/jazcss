@@ -24,6 +24,26 @@ const packageFile  = require("./package");
 
 let colors = {};
 
+gulp.task("core", function(){
+	return gulp.src("src/styles/core.scss")
+		.pipe(plumber({errorHandler: function (err) {
+			console.log(err.formatted);
+			this.emit("end");
+		}}))
+		.pipe(sourcemaps.init())
+		.pipe(sassGlob())
+		.pipe(wait(100)) // fixes issues with Visual Studio Code and SublimeText with atomic_save: false - increase this value if you get scss import errors
+		.pipe(sass())
+		.pipe(postcss([
+			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
+			cssnano()
+		]))
+		.pipe(rename({suffix: ".min"}))
+		.pipe(sourcemaps.write("maps"))
+		.pipe(gulp.dest("build"))
+		.pipe(browserSync.stream({match: "**/*.css"}));
+});
+
 gulp.task("styles", function(){
 	return gulp.src("src/styles/styles.scss")
 		.pipe(plumber({errorHandler: function (err) {
@@ -138,7 +158,8 @@ gulp.task("browsersync", function(){
 });
 
 gulp.task("watch", function(){
-	gulp.watch("src/styles/**/*.{css,scss}", ["styles"]);
+	gulp.watch("src/styles/{helpers,layout}/*.{css,scss}", ["core"]);
+	gulp.watch("src/styles/{base,common,components,vendor}/*.{css,scss}", ["styles"]);
 	gulp.watch("src/styles/base/variables.scss", ["colors", "handlebars", "watch:handlebars"]);
 	gulp.watch("src/scripts/**/*.js", ["scripts"]);
 	gulp.watch("src/fonts/**/*", ["fonts"]);
@@ -156,11 +177,11 @@ gulp.task("clean", function(){
 });
 
 gulp.task("build", function(){
-	return runSequence("clean", "colors", ["handlebars", "styles", "scripts", "fonts", "videos", "images"]);
+	return runSequence("clean", "colors", "core", ["handlebars", "styles", "scripts", "fonts", "videos", "images"]);
 });
 
 gulp.task("serve", function(){
-	return runSequence("clean", "colors", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
+	return runSequence("clean", "colors", "core", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
 });
 
 gulp.task("default", [
