@@ -135,8 +135,7 @@ gulp.task("handlebars", function(){
 			.helpers(hbLayouts)
 			.helpers("./node_modules/handlebars-helpers/lib/**/!(object).js")
 			.data({
-				colors: colors,
-				title: packageFile.name[0].toUpperCase() + packageFile.name.substr(1)
+				colors: colors
 			})
 		)
 		.pipe(rename({extname: ".html"}))
