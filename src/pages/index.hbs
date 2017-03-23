@@ -16,22 +16,22 @@
 		</ul>
 		<h2>Directory structure</h2>
 		<ul>
-			<li><strong><code>src/pages</code></strong> - The main view files which get rendered into <code>html</code> files with the same name when built</li>
-			<li><strong><code>src/layouts</code></strong> - Wrappers for pages. Contains placeholders which page files are rendered inside of</li>
-			<li><strong><code>src/partials</code></strong> - Individual component markup files. These can be used on pages and layouts using <code>&#123;&#123;&gt;header&#125;&#125;</code></li>
-			<li><strong><code>src/styles</code></strong> - Sass styles, described below</li>
-			<li><strong><code>src/scripts</code></strong> - JS scripts. Files in these directories are automatically concatenated and minified via gulp</li>
-			<li><strong><code>src/images</code>, <code>src/videos</code>, <code>src/fonts</code></strong> - These directories are directly copied into the build folder</li>
-			<li><strong><code>.editorconfig</code></strong> - See <a target="_blank" href="https://editorconfig.org/">EditorConfig.org</a>. Standardises formatting for project so tabs don't fight with spaces</li>
+			<li><code>src/pages</code> - The main view files which get rendered into <code>html</code> files with the same name when built</li>
+			<li><code>src/layouts</code> - Wrappers for pages. Contains placeholders which page files are rendered inside of</li>
+			<li><code>src/partials</code> - Individual component markup files. These can be used on pages and layouts using <code>&#123;&#123;&gt;header&#125;&#125;</code></li>
+			<li><code>src/styles</code> - Sass styles, described below</li>
+			<li><code>src/scripts</code> - JS scripts. Files in these directories are automatically concatenated and minified via gulp</li>
+			<li><code>src/images</code>, <code>src/videos</code>, <code>src/fonts</code> - These directories are directly copied into the build folder</li>
+			<li><code>.editorconfig</code> - See <a target="_blank" href="https://editorconfig.org/">EditorConfig.org</a>. Standardises formatting for project so tabs don't fight with spaces</li>
 		</ul>
 		<h2>Style structure</h2>
 		<ul>
-			<li><strong>Base</strong> - Contains files that are core to the framework and shouldn't need much changing other than <code>variables.scss</code></li>
-			<li><strong>Helpers</strong> - Classes that provide useful functionality. Shouldn't need changing</li>
-			<li><strong>Layout</strong> - Classes specifically focussed on element positioning. Shouldn't need changing</li>
-			<li><strong>Common</strong> - Style rules that target standard HTML elements such as <code>&lt;a&gt;</code>, <code>&lt;h1&gt;</code> etc</li>
-			<li><strong>Components</strong> - The bread and butter of your project. Every partial should have a corresponding file here</li>
-			<li><strong>Vendor</strong> - Shove all your dirty third-party CSS in here</li>
+			<li><code>Base</code> - Contains core framework files and shouldn't need much changing other than <code>variables.scss</code></li>
+			<li><code>Helpers</code> - Classes that provide useful functionality. Shouldn't need changing</li>
+			<li><code>Layout</code> - Classes specifically focussed on element positioning. Shouldn't need changing</li>
+			<li><code>Common</code> - Style rules that target standard HTML elements such as <code>&lt;a&gt;</code>, <code>&lt;h1&gt;</code> etc</li>
+			<li><code>Components</code> - The bread and butter of your project. Every partial should have a corresponding file here</li>
+			<li><code>Vendor</code> - Shove all your dirty third-party CSS in here</li>
 		</ul>
 	{{/content}}
 {{/extend}}
