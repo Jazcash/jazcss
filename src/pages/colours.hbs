@@ -1,18 +1,19 @@
-{{#extend "generic" title="Colours"}}
+{{#extend "generic" title="Colors"}}
 	{{#content "content"}}
-		<div class="wrapped">
-			<div class="collist row-1 sm-row-2">
-				{{#each colors}}
-					<div class="color-block bg-{{@key}}">
-						<div class="color-block__name">
-							{{@key}}
-						</div>
-						<div class="color-block__hex">
-							{{this}}
-						</div>
+		<h1>Colors</h1>
+		<p>The colours below are automatically generated via the <code>colors</code> gulp task. These colours are sourced from the <code>$colors</code> sass-map in <code>base/variables.scss</code>. You won't see the british spelling of "color" anywhere because the british aren't to be trusted.</p>
+
+		<div class="collist row-1 sm-row-2">
+			{{#each colors}}
+				<div class="color-block bg-{{@key}}">
+					<div class="color-block__name">
+						{{@key}}
 					</div>
-				{{/each}}
-			</div>
+					<div class="color-block__hex">
+						{{this}}
+					</div>
+				</div>
+			{{/each}}
 		</div>
 	{{/content}}
 {{/extend}}

@@ -1,18 +1,29 @@
 {{#extend "generic" title="Wrapper"}}
 	{{#content "content"}}
-		<section>
-			<h1>Wrappers</h1>
-			<p>Wrappers are the best thing ever</p>
-		</section>
+		<h1>Wrappers</h1>
+		<p>Wrappers are what control whether your content stays inside the <code>$wrapperWidth</code> or not. The <code>&lt;main&gt;</code> element is wrapped, so all the content on your pages should be wrapped by default. To have unwrapped elements, simply use the <code>unwrapped</code> class. You can then add a sub-element with class <code>wrapped</code> to rewrap all the content again. Inspect the examples below to see for yourself.</p>
+		
 
-		<section class="unwrapped padding-md bg-nicered fg-white">
-			Unwrapped content
-		</section>
+		<div class="unwrapped padding-md bg-red fg-white">
+			Unwrapped element and content
+		</div>
 
 		<br>
 
-		<section class="breakout padding-md bg-nicered fg-white">
-			Breakout
-		</section>
+		<div class="unwrapped padding-md bg-red fg-white">
+			<div class="wrapped">
+				Unwrapped element with wrapped content
+			</div>
+		</div>
+
+		<br>
+
+		<div class="breakout padding-md bg-red fg-white">
+			Breakout from the wrapper by the amount specified by <code class="fg-nero">$breakoutWidth</code>
+		</div>
+
+		<p>
+			One awesome thing about these is that they will fit to full-width as the browser shrinks instead of forcing horizontal scroll like a bad framework would do. God I'm good.
+		</p>
 	{{/content}}
 {{/extend}}

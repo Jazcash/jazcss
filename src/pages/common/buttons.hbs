@@ -1,56 +1,54 @@
 {{#extend "generic" title="Buttons"}}
 	{{#content "content"}}
-		<section>
-			<h1>Buttons vs Link-buttons</h1>
-			<p>
-				The difference between a button and a link-button is important, as each has specific behaviour that should belong to it. A <code>&lt;button&gt;</code>, should always have a type attribute attached. If you have an element that should trigger a client-side action, use <code>type="button</code>. For a form submit, use <code>type="submit"</code>. This means you should no longer be using the <code>&lt;input type="button"/&gt;</code> or <code>&lt;input type="submit"/&gt;</code> elements.
-			</p>
-			<p>
-				A link-button is a link that's styled to look the same as a <code>&lt;button&gt;</code> element. To use one, simply add the <code>btn</code> class to a <code>&lt;a&gt;</code> tag. Only use a link-button if there is a <code>href</code> to attach and no JS event hooked up.
-			</p>
-			<p>
-				<button type="button">Button</button>
-				<code>&lt;button type="button"&gt;Button&lt;/button&gt;</code>
-			</p>
-			<p>
-				<a href="" class="btn">Link-button</a>
-				<code>&lt;a href="" class="btn"&gt;Link-button&lt;/a&gt;</code>
-			</p>
-			<p>
-				One of the key reasons for using the <code>&lt;button&gt;</code> element, is that it can contain anything. Images, divs, <small>even tables</small> are all valid inside buttons. This framework uses font-awesome for simple icons, which you should use with buttons like so:
-			</p>
-			<p>
-				<button>
-					<i class="fa fa-search" aria-hidden="true"></i><span>Search</span>
-				</button>
-				<button>
-					<span>Search</span><i class="fa fa-search" aria-hidden="true"></i>
-				</button>
-				<button>
-					Search<i class="fa fa-search" aria-hidden="true"></i>
-				</button>
-				<code>
-					&lt;button&gt;
-						&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Search&lt;/span&gt;
-					&lt;/button&gt;
-				</code>
-			</p>
-			<p>
-				Of course, you can do the same thing with link-buttons:
-			</p>
-			<p>
-				<a href="" class="btn">
-					<i class="fa fa-search" aria-hidden="true"></i><span>Search</span>
-				</a>
-				<a href="" class="btn">
-					<span>Search</span><i class="fa fa-search" aria-hidden="true"></i>
-				</a>
-				<code>
-					&lt;a href="" class="btn"&gt;
-						&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Search&lt;/span&gt;
-					&lt;/a&gt;
-				</code>
-			</p>
-		</section>
+		<h1>Buttons vs Link-buttons</h1>
+		<p>
+			The difference between a button and a link-button is important, as each has specific behaviour that should belong to it. A <code>&lt;button&gt;</code>, should always have a type attribute attached. If you have an element that should trigger a client-side action, use <code>type="button</code>. For a form submit, use <code>type="submit"</code>. This means you should no longer be using the <code>&lt;input type="button"/&gt;</code> or <code>&lt;input type="submit"/&gt;</code> elements.
+		</p>
+		<p>
+			A link-button is a link that's styled to look the same as a <code>&lt;button&gt;</code> element. To use one, simply add the <code>btn</code> class to a <code>&lt;a&gt;</code> tag. Only use a link-button if there is a <code>href</code> to attach and no JS event hooked up.
+		</p>
+		<p>
+			<button type="button">Button</button>
+			<code>&lt;button type="button"&gt;Button&lt;/button&gt;</code>
+		</p>
+		<p>
+			<a href="" class="btn">Link-button</a>
+			<code>&lt;a href="" class="btn"&gt;Link-button&lt;/a&gt;</code>
+		</p>
+		<p>
+			One of the key reasons for using the <code>&lt;button&gt;</code> element, is that it can contain anything. Images, divs, <small>even tables</small> are all valid inside buttons. This framework uses font-awesome for simple icons, which you should use with buttons like so:
+		</p>
+		<p>
+			<button>
+				<i class="fa fa-search" aria-hidden="true"></i><span>Search</span>
+			</button>
+			<button>
+				<span>Search</span><i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+			<button>
+				Search<i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+			<code>
+				&lt;button&gt;
+					&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Search&lt;/span&gt;
+				&lt;/button&gt;
+			</code>
+		</p>
+		<p>
+			Of course, you can do the same thing with link-buttons:
+		</p>
+		<p>
+			<a href="" class="btn">
+				<i class="fa fa-search" aria-hidden="true"></i><span>Search</span>
+			</a>
+			<a href="" class="btn">
+				<span>Search</span><i class="fa fa-search" aria-hidden="true"></i>
+			</a>
+			<code>
+				&lt;a href="" class="btn"&gt;
+					&lt;i class="fa fa-search" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Search&lt;/span&gt;
+				&lt;/a&gt;
+			</code>
+		</p>
 	{{/content}}
 {{/extend}}

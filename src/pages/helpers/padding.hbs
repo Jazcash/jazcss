@@ -1,5 +1,20 @@
 {{#extend "generic" title="Padding"}}
 	{{#content "content"}}
-		Padding
+		<h1>Padding</h1>
+		<p>The padding helper provides an easy way to add padding to an element</p>
+
+		<div class="bg-green padding-top-md"><code>padding-top-md</code></div>
+		<br>
+		<div class="bg-green padding-xs"><code>padding-xs</code></div>
+		<br>
+		<div class="bg-green padding-h-lg"><code>padding-h-lg</code></div>
+		<br>
+		<div class="bg-green padding-v-lg"><code>padding-v-lg</code></div>
+
+		<p>You can also apply responsive padding like so</p>
+
+		<div class="bg-green padding-xs sm-padding-md md-padding-lg lg-padding-xl lg-padding-xxl"><code>padding-h-xs sm-padding-h-md md-padding-h-lg lg-padding-h-xl lg-padding-h-xxl</code></div>
+		<br>
+		<div class="bg-green padding-xs wrapper-padding-v-xxl"><code>padding-xs wrapper-padding-v-xxl</code></div>
 	{{/content}}
 {{/extend}}

@@ -44,3 +44,12 @@
 		}
 	}
 }
+
+$dir: "left", "right", "top", "bottom";
+@each $d in $dir{
+	@each $key, $val in $spacer{
+		.margin-#{$d}-#{$key}{
+			margin-#{$d}: $val;
+		}
+	}
+}

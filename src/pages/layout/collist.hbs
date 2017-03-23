@@ -1,5 +1,63 @@
 {{#extend "generic" title="Collist"}}
 	{{#content "content"}}
-		Collist
+		<h1>Collist</h1>
+		<p>
+			Collist is a responsive layout system that allows you to arrange a list of elements in a grid-like fashion. To use it, simply add the <code>collist</code> class to a <code>div</code>. Like col, class <code>row-n</code> (where <code>n</code> is 1-12) provides a base width. You can then follow this with classes that specify how many items to display per row at particular breakpoints. For example, the class <code>md-row-3</code> will show 3 items per row for viewport widths greater than the <coede>md</code> breakpoint. Larger breakpoints take precedence over smaller ones.
+		</p>
+
+		<code>collist row-1 xs-row-2 sm-row-3 md-row-4</code>:
+		<div class="section padding-v-xs">
+			<div class="collist row-1 xs-row-2 sm-row-3 md-row-4">
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some more text to show match heights</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+			</div>
+		</div>
+
+		<br>
+
+		<code>collist row-1 xs-row-2 sm-row-3 md-row-4 gutter-xs</code>:
+		<div class="section padding-v-xs">
+			<div class="collist row-1 xs-row-2 sm-row-3 md-row-4 gutter-xs">
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some more text to show match heights</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+			</div>
+		</div>
+
+		<br>
+
+		<code>collist row-1 xs-row-2 sm-row-3 md-row-4 gutter-xl</code>:
+		<div class="section padding-v-xs">
+			<div class="collist row-1 xs-row-2 sm-row-3 md-row-4 gutter-xl">
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some more text to show match heights</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+				<div><div class="jazcss-item">Some text</div></div>
+			</div>
+		</div>
 	{{/content}}
 {{/extend}}

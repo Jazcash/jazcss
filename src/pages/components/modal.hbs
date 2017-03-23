@@ -1,14 +1,12 @@
 {{#extend "generic" title="Modal"}}
 	{{#content "content"}}
-		<section>
-			<h1>Modal</h1>
-			<p><a href="#mymodal">Remodal</a></p>
+		<h1>Modal</h1>
+		<p><a href="#mymodal">Remodal</a></p>
 
-			{{#extend "modal" modal-id="mymodal"}}
-				{{#content "modal-content"}}
-					I am a modal!
-				{{/content}}
-			{{/extend}}
-		</section>
+		{{#extend "modal" modal-id="mymodal"}}
+			{{#content "modal-content"}}
+				I am a modal!
+			{{/content}}
+		{{/extend}}
 	{{/content}}
 {{/extend}}

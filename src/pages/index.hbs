@@ -2,7 +2,10 @@
 	{{#content "content"}}
 		<h1>Jazcss</h1>
 		<p>
-			Jazcss is my frontend framework that I use whenever I start a new project. It contains all the usual things you'd expect from any framework, plus a few extras. It's built to be responsive, customisable and semantically correct as much as possible. This site is using the latest version of Jazcss and shows off all the things it can do.</p><p>It's worth noting that you really shouldn't consider using this framework unless you can be sure gzip will be enabled on the server. This is because Jazcss offers a lot of spacing options for the col/collist layouts using iterative SCSS <code>@each</code> blocks. This pushes the size of the framework way up over 200KB, but because it's all very similar code, gzip compression brings it down by about 95% making it really lightweight.
+			Jazcss is my frontend framework that I use whenever I start a new project. It contains all the usual things you'd expect from any framework, plus a few extras. It's built to be responsive, customisable and semantically correct as much as possible. This site is using the latest version of Jazcss and shows off all the things it can do.</p><p>It's worth noting that you really shouldn't consider using this framework unless you can be sure gzip will be enabled on the server. This is because Jazcss offers a shit ton of optional spacing classes to make fine-tuning layouts easier. They're implemented using iterative SCSS <code>@each</code> blocks. This pushes the size of the framework way up to around 200KB, but because it's all very similar code, gzip compression brings it down by about 95% making it really lightweight afterwards.
+		</p>
+		<p>
+			The heavy stuff is split into its own CSS file, <a target="_blank" href="/core.min.css">core.min.css</a>. Huge, right? Bung it in an online GZIP compressor like <a href="http://refresh-sf.com/" target="_blank">this one</a>, hit the CSS button and see the magic.
 		</p>
 		<h2>Tech</h2>
 		<ul>
@@ -15,9 +18,10 @@
 		<ul>
 			<li><strong>Base</strong> - Contains files that are core to the framework and shouldn't need much changing other than <code>variables.scss</code></li>
 			<li><strong>Helpers</strong> - Classes that provide useful functionality</li>
-			<li><strong>Layout</strong> - Like helpers, but specifically focussed on element positioning</li>
+			<li><strong>Layout</strong> - Classes specifically focussed on element positioning</li>
 			<li><strong>Common</strong> - Style rules that target standard HTML elements such as headings</li>
 			<li><strong>Components</strong> - The bread and butter of your project. Every partial should have a corresponding file here</li>
+			<li><strong>Vendor</strong> - Shove all your dirty third-party CSS in here</li>
 		</ul>
 	{{/content}}
 {{/extend}}

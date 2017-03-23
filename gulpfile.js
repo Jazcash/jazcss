@@ -20,11 +20,10 @@ const del          = require("del");
 const hbLayouts    = require("handlebars-layouts");
 const hbHelpers    = require("handlebars-helpers");
 const browserSync  = require("browser-sync").create();
-const packageFile  = require("./package");
 
 let colors = {};
 
-gulp.task("core", function(){
+gulp.task("core-styles", function(){
 	return gulp.src("src/styles/core.scss")
 		.pipe(plumber({errorHandler: function (err) {
 			console.log(err.formatted);
@@ -32,7 +31,7 @@ gulp.task("core", function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		.pipe(wait(100)) // fixes issues with Visual Studio Code and SublimeText with atomic_save: false - increase this value if you get scss import errors
+		//.pipe(wait(500)) // fixes import issues with Visual Studio Code and SublimeText with atomic_save: false
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
@@ -52,7 +51,7 @@ gulp.task("styles", function(){
 		}}))
 		.pipe(sourcemaps.init())
 		.pipe(sassGlob())
-		.pipe(wait(100)) // fixes issues with Visual Studio Code and SublimeText with atomic_save: false - increase this value if you get scss import errors
+		//.pipe(wait(500)) // fixes import issues with Visual Studio Code and SublimeText with atomic_save: false
 		.pipe(sass())
 		.pipe(postcss([
 			autoprefixer({browsers: ["last 50 versions", "ie >= 9"]}),
@@ -85,34 +84,8 @@ gulp.task("scripts", function(){
 		.pipe(browserSync.stream({match: "**/*.js"}));
 });
 
-gulp.task("images", function(){
-	return gulp.src("src/images/**/*.{png,jpg,gif}")
-		.pipe(plumber({errorHandler: function (err) {
-			console.log(err);
-			this.emit("end");
-		}}))
-		.pipe(gulp.dest("build/images"));
-});
-
-gulp.task("videos", function(){
-	return gulp.src("src/videos/**/*")
-		.pipe(plumber({errorHandler: function (err) {
-			console.log(err);
-			this.emit("end");
-		}}))
-		.pipe(gulp.dest("build/videos"));
-});
-
-gulp.task("fonts", function(){
-	return gulp.src("src/fonts/**/*")
-		.pipe(plumber({errorHandler: function (err) {
-			console.log(err);
-			this.emit("end");
-		}}))
-		.pipe(gulp.dest("build/fonts"));
-});
-
 gulp.task("colors", function(){
+	colors = {};
 	var fileStr = fs.readFileSync("src/styles/base/variables.scss", "utf-8");
 	var re = /\$colors\:\s([.\s\S][^;]*)/;
 	var matches = fileStr.match(re);
@@ -121,6 +94,46 @@ gulp.task("colors", function(){
 		let color = colorStr[i].split(":");
 		colors[color[0]] = color[1];
 	}
+});
+
+gulp.task("images", function(){
+	return gulp.src("src/images/**/*")
+		.pipe(plumber({errorHandler: function (err) {
+			console.log(err);
+			this.emit("end");
+		}}))
+		.pipe(gulp.dest("build/images"))
+		.pipe(browserSync.stream({match: "images/**/*"}));
+});
+
+gulp.task("videos", function(){
+	return gulp.src("src/videos/**/*")
+		.pipe(plumber({errorHandler: function (err) {
+			console.log(err);
+			this.emit("end");
+		}}))
+		.pipe(gulp.dest("build/videos"))
+		.pipe(browserSync.stream({match: "video/**/*"}));
+});
+
+gulp.task("fonts", function(){
+	return gulp.src("src/fonts/**/*")
+		.pipe(plumber({errorHandler: function (err) {
+			console.log(err);
+			this.emit("end");
+		}}))
+		.pipe(gulp.dest("build/fonts"))
+		.pipe(browserSync.stream({match: "fonts/**/*"}));
+});
+
+gulp.task("other", function(){
+	return gulp.src("src/*.*")
+		.pipe(plumber({errorHandler: function (err) {
+			console.log(err);
+			this.emit("end");
+		}}))
+		.pipe(gulp.dest("build"))
+		.pipe(browserSync.stream({match: "src/*.*"}));
 });
 
 gulp.task("handlebars", function(){
@@ -157,14 +170,15 @@ gulp.task("browsersync", function(){
 });
 
 gulp.task("watch", function(){
-	gulp.watch("src/styles/{helpers,layout}/*.{css,scss}", ["core"]);
+	gulp.watch("src/styles/{helpers,layout}/*.{css,scss}", ["core-styles"]);
 	gulp.watch("src/styles/{base,common,components,vendor}/*.{css,scss}", ["styles"]);
-	gulp.watch("src/styles/base/variables.scss", ["colors", "handlebars", "watch:handlebars"]);
+	gulp.watch("src/styles/base/variables.scss", ["colors", "core-styles", "handlebars", "watch:handlebars"]);
 	gulp.watch("src/scripts/**/*.js", ["scripts"]);
 	gulp.watch("src/fonts/**/*", ["fonts"]);
 	gulp.watch("src/images/**/*.{png,jpg,gif}", ["images"]);
 	gulp.watch("src/videos/**/*", ["videos"]);
 	gulp.watch("src/**/*.hbs", ["watch:handlebars"]);
+	gulp.watch("src/*.*", ["other"]);
 });
 
 gulp.task("watch:handlebars", ["handlebars"], function(){
@@ -176,11 +190,11 @@ gulp.task("clean", function(){
 });
 
 gulp.task("build", function(){
-	return runSequence("clean", "colors", "core", ["handlebars", "styles", "scripts", "fonts", "videos", "images"]);
+	return runSequence("clean", "colors", "core-styles", ["handlebars", "styles", "scripts", "images", "videos", "fonts", "other"]);
 });
 
 gulp.task("serve", function(){
-	return runSequence("clean", "colors", "core", ["handlebars", "styles", "scripts", "fonts", "images"], "browsersync");
+	return runSequence("clean", "colors", "core-styles", ["handlebars", "styles", "scripts", "images", "videos", "fonts", "other"], "browsersync");
 });
 
 gulp.task("default", [

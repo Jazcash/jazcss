@@ -1,228 +1,226 @@
 {{#extend "generic" title="Inputs"}}
 	{{#content "content"}}
-		<section>
-			<h1>Inputs</h1>
-			<p>Normal fields, disabled fields, invalid fields</p>
-			<br>
-			<form>
-				<table>
-					<tr>
-						<td>
-							<label>Button</label>
-						</td>
-						<td>
-							<button type="button">Button</button>
-							<button type="submit">Submit</button>
-							<button type="reset">Reset</button>
-							<button disabled>Disabled</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="required">Textbox</label>
-						</td>
-						<td>
-							<input type="text" placeholder="textbox" required>
-							<input type="text" placeholder="disabled" readonly>
-							<input type="text" placeholder="invalid" pattern="valid" value="invalid">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Email</label>
-						</td>
-						<td>
-							<input type="email" placeholder="example@example.com">
-							<input type="email" placeholder="disabled@disabled.com" disabled>
-							<input type="email" placeholder="invalid" value="invalid">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Password</label>
-						</td>
-						<td>
-							<input type="password">
-							<input type="password" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>URL</label>
-						</td>
-						<td>
-							<input type="url" placeholder="url">
-							<input type="url" placeholder="url" disabled>
-							<input type="url" placeholder="url" value="invalid">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Radio Buttons</label>
-						</td>
-						<td>
-							<input type="radio" name="g1" id="r1" checked><label for="r1">Radio 1</label>
-							<input type="radio" name="g1" id="r2"><label for="r2">Radio 2</label>
-							<input type="radio" name="g1" id="r3"><label for="r3">Radio 3</label>
+		<h1>Inputs</h1>
+		<p>Normal fields, disabled fields, invalid fields</p>
+		<br>
+		<form>
+			<table>
+				<tr>
+					<td>
+						<label>Button</label>
+					</td>
+					<td>
+						<button type="button">Button</button>
+						<button type="submit">Submit</button>
+						<button type="reset">Reset</button>
+						<button disabled>Disabled</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="required">Textbox</label>
+					</td>
+					<td>
+						<input type="text" placeholder="textbox" required>
+						<input type="text" placeholder="disabled" readonly>
+						<input type="text" placeholder="invalid" pattern="valid" value="invalid">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Email</label>
+					</td>
+					<td>
+						<input type="email" placeholder="example@example.com">
+						<input type="email" placeholder="disabled@disabled.com" disabled>
+						<input type="email" placeholder="invalid" value="invalid">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Password</label>
+					</td>
+					<td>
+						<input type="password">
+						<input type="password" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>URL</label>
+					</td>
+					<td>
+						<input type="url" placeholder="url">
+						<input type="url" placeholder="url" disabled>
+						<input type="url" placeholder="url" value="invalid">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Radio Buttons</label>
+					</td>
+					<td>
+						<input type="radio" name="g1" id="r1" checked><label for="r1">Radio 1</label>
+						<input type="radio" name="g1" id="r2"><label for="r2">Radio 2</label>
+						<input type="radio" name="g1" id="r3"><label for="r3">Radio 3</label>
 
-							<span class="qubase-spacer"></span>
+						<span class="qubase-spacer"></span>
 
-							<input type="radio" name="g2" id="r4" checked disabled><label for="r4">Disabled 1</label>
-							<input type="radio" name="g2" id="r5" disabled><label for="r5">Disabled 2</label>
-							<input type="radio" name="g2" id="r6" disabled><label for="r6">Disabled 3</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Checkboxes</label>
-						</td>
-						<td>
-							<input type="checkbox" name="g3" id="c1" checked><label for="c1">Checkbox 1</label>
-							<input type="checkbox" name="g3" id="c2"><label for="c2">Checkbox 2</label>
-							<input type="checkbox" name="g3" id="c3"><label for="c3">Checkbox 3</label>
+						<input type="radio" name="g2" id="r4" checked disabled><label for="r4">Disabled 1</label>
+						<input type="radio" name="g2" id="r5" disabled><label for="r5">Disabled 2</label>
+						<input type="radio" name="g2" id="r6" disabled><label for="r6">Disabled 3</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Checkboxes</label>
+					</td>
+					<td>
+						<input type="checkbox" name="g3" id="c1" checked><label for="c1">Checkbox 1</label>
+						<input type="checkbox" name="g3" id="c2"><label for="c2">Checkbox 2</label>
+						<input type="checkbox" name="g3" id="c3"><label for="c3">Checkbox 3</label>
 
-							<span class="qubase-spacer"></span>
+						<span class="qubase-spacer"></span>
 
-							<input type="checkbox" name="g4" id="c4" checked disabled><label for="c4">Disabled 1</label>
-							<input type="checkbox" name="g4" id="c5" disabled><label for="c5">Disabled 2</label>
-							<input type="checkbox" name="g4" id="c6" disabled><label for="c6">Disabled 3</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Textarea</label>
-						</td>
-						<td>
-							<textarea placeholder="textarea"></textarea>
-							<textarea placeholder="disabled" disabled></textarea>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Select</label>
-						</td>
-						<td>
-							<select>
+						<input type="checkbox" name="g4" id="c4" checked disabled><label for="c4">Disabled 1</label>
+						<input type="checkbox" name="g4" id="c5" disabled><label for="c5">Disabled 2</label>
+						<input type="checkbox" name="g4" id="c6" disabled><label for="c6">Disabled 3</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Textarea</label>
+					</td>
+					<td>
+						<textarea placeholder="textarea"></textarea>
+						<textarea placeholder="disabled" disabled></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Select</label>
+					</td>
+					<td>
+						<select>
+							<option>Option 1</option>
+							<option>Option 2</option>
+						</select>
+						<select>
+							<optgroup label="Option Group 1">
 								<option>Option 1</option>
-								<option>Option 2</option>
-							</select>
-							<select>
-								<optgroup label="Option Group 1">
-									<option>Option 1</option>
-								</optgroup>
-								<optgroup label="Option Group 2">
-									<option selected>Option 2</option>
-									<option>Option 3</option>
-								</optgroup>
-							</select>
-							<select multiple>
-								<option>Option 1</option>
-								<option>Option 2</option>
-							</select>
-							<select size="3" multiple>
-								<option selected>Option 1</option>
-								<option>Option 2</option>
+							</optgroup>
+							<optgroup label="Option Group 2">
+								<option selected>Option 2</option>
 								<option>Option 3</option>
-								<option>Option 4</option>
-								<option>Option 5</option>
-							</select>
-							<select disabled>
-								<option>disabled</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>File</label>
-						</td>
-						<td>
-							<input type="file">
-							<input type="file" disabled>
-							<input type="file" multiple>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Range</label>
-						</td>
-						<td>
-							<input type="range" min="0" max="10" step="1" value="5">
-							<input type="range" min="0" max="10" step="1" value="5" orient="vertical">
-							<input type="range" min="0" max="10" step="1" value="5" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Number</label>
-						</td>
-						<td>
-							<input type="number" value="1">
-							<input type="number" min="1" max="10" value="3">
-							<input type="number" min="10" max="50" value="5" step="10">
-							<input type="number" min="1" max="10" value="2" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Date</label>
-						</td>
-						<td>
-							<input type="date">
-							<input type="date" min="2000-01-01" value="1999-12-31">
-							<input type="date" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Month</label>
-						</td>
-						<td>
-							<input type="month">
-							<input type="month" min="1996-12" max="2020-05" value="2050-12">
-							<input type="month" value="1996-12" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Week</label>
-						</td>
-						<td>
-							<input type="week">
-							<input type="week" min="2010-W1" max="2016-W20" value="2016-W40">
-							<input type="week" value="2014-W16" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Time</label>
-						</td>
-						<td>
-							<input type="time">
-							<input type="time" min="10:00:00" max="17:39:56" value="17:39:57">
-							<input type="time" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Local Datetime</label>
-						</td>
-						<td>
-							<input type="datetime-local">
-							<input type="datetime-local" min="1985-04-12T23:20:50.53" value="1985-04-12T23:20:50.52">
-							<input type="datetime-local" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>Color</label>
-						</td>
-						<td>
-							<input type="color"/>
-							<input type="color" disabled>
-						</td>
-					</tr>
-				</table>
-			</form>
-		</section>
+							</optgroup>
+						</select>
+						<select multiple>
+							<option>Option 1</option>
+							<option>Option 2</option>
+						</select>
+						<select size="3" multiple>
+							<option selected>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+							<option>Option 4</option>
+							<option>Option 5</option>
+						</select>
+						<select disabled>
+							<option>disabled</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>File</label>
+					</td>
+					<td>
+						<input type="file">
+						<input type="file" disabled>
+						<input type="file" multiple>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Range</label>
+					</td>
+					<td>
+						<input type="range" min="0" max="10" step="1" value="5">
+						<input type="range" min="0" max="10" step="1" value="5" orient="vertical">
+						<input type="range" min="0" max="10" step="1" value="5" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Number</label>
+					</td>
+					<td>
+						<input type="number" value="1">
+						<input type="number" min="1" max="10" value="3">
+						<input type="number" min="10" max="50" value="5" step="10">
+						<input type="number" min="1" max="10" value="2" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Date</label>
+					</td>
+					<td>
+						<input type="date">
+						<input type="date" min="2000-01-01" value="1999-12-31">
+						<input type="date" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Month</label>
+					</td>
+					<td>
+						<input type="month">
+						<input type="month" min="1996-12" max="2020-05" value="2050-12">
+						<input type="month" value="1996-12" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Week</label>
+					</td>
+					<td>
+						<input type="week">
+						<input type="week" min="2010-W1" max="2016-W20" value="2016-W40">
+						<input type="week" value="2014-W16" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Time</label>
+					</td>
+					<td>
+						<input type="time">
+						<input type="time" min="10:00:00" max="17:39:56" value="17:39:57">
+						<input type="time" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Local Datetime</label>
+					</td>
+					<td>
+						<input type="datetime-local">
+						<input type="datetime-local" min="1985-04-12T23:20:50.53" value="1985-04-12T23:20:50.52">
+						<input type="datetime-local" disabled>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Color</label>
+					</td>
+					<td>
+						<input type="color"/>
+						<input type="color" disabled>
+					</td>
+				</tr>
+			</table>
+		</form>
 	{{/content}}
 {{/extend}}
