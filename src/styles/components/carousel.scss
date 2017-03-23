@@ -1,0 +1,34 @@
+.carousel{
+    display: flex;
+    position: relative;
+    .bx-wrapper{
+        margin-bottom: 0;
+        box-shadow: initial;
+        border: none;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+    &__control{
+        position: absolute;
+        background-color: rgba(#000, 0.2);
+        color: rgba(#fff, 0.8);
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        z-index: 1;
+        height: 100%;
+        &-left{
+            left: 0;
+        }
+        &-right{
+            right: 0;
+        }
+        &:hover{
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+}
