@@ -160,7 +160,7 @@ gulp.task("browsersync", function(){
 		server: {
 			baseDir: "build",
 			index: "index.html",
-			port: 3001,
+			port: 3005,
 			serveStaticOptions: {
 				extensions: ["html"]
 			}
