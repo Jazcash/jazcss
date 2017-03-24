@@ -1,13 +1,21 @@
 {{#extend "generic" title="Modal"}}
 	{{#content "content"}}
 		<h1>Modal</h1>
-		<p><a href="#mymodal">Remodal</a></p>
+		<p>Jazcss utilises <a target="_blank" href="http://vodkabears.github.io/remodal">Remodal</a> for its modal component. <a href="#mymodal">Click this</a> to see it in action.</p>
 
 		{{#extend "modal" modal-id="mymodal"}}
 			{{#content "modal-content"}}
 				I am a modal!
 			{{/content}}
 		{{/extend}}
-		
+
+		<p>And this is how you can use it in the Handlebars views:</p>
+
+		<pre class="padding-md" style="background-color: #eee"><code>&#x3C;&#x61;&#x20;&#x68;&#x72;&#x65;&#x66;&#x3D;&#x22;&#x23;&#x6D;&#x79;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x22;&#x3E;&#x43;&#x6C;&#x69;&#x63;&#x6B;&#x20;&#x74;&#x68;&#x69;&#x73;&#x3C;&#x2F;&#x61;&#x3E;&#xA;&#xA;&#x7B;&#x7B;&#x23;&#x65;&#x78;&#x74;&#x65;&#x6E;&#x64;&#x20;&#x22;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x22;&#x20;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x2D;&#x69;&#x64;&#x3D;&#x22;&#x6D;&#x79;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x22;&#x7D;&#x7D;&#xA;&#x20;&#x20;&#x20;&#x20;&#x7B;&#x7B;&#x23;&#x63;&#x6F;&#x6E;&#x74;&#x65;&#x6E;&#x74;&#x20;&#x22;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x65;&#x6E;&#x74;&#x22;&#x7D;&#x7D;&#xA;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x49;&#x20;&#x61;&#x6D;&#x20;&#x61;&#x20;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x21;&#xA;&#x20;&#x20;&#x20;&#x20;&#x7B;&#x7B;&#x2F;&#x63;&#x6F;&#x6E;&#x74;&#x65;&#x6E;&#x74;&#x7D;&#x7D;&#xA;&#x7B;&#x7B;&#x2F;&#x65;&#x78;&#x74;&#x65;&#x6E;&#x64;&#x7D;&#x7D;</code></pre>
+
+		<p>Or use it directly:</p>
+
+		<pre class="padding-md" style="background-color: #eee"><code>&#x3C;&#x61;&#x20;&#x68;&#x72;&#x65;&#x66;&#x3D;&#x22;&#x23;&#x6D;&#x79;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x22;&#x3E;&#x43;&#x6C;&#x69;&#x63;&#x6B;&#x20;&#x74;&#x68;&#x69;&#x73;&#x3C;&#x2F;&#x61;&#x3E;&#xA;&#xA;&#x3C;&#x64;&#x69;&#x76;&#x20;&#x63;&#x6C;&#x61;&#x73;&#x73;&#x3D;&#x22;&#x72;&#x65;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x22;&#x20;&#x64;&#x61;&#x74;&#x61;&#x2D;&#x72;&#x65;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x2D;&#x69;&#x64;&#x3D;&#x22;&#x23;&#x6D;&#x79;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x22;&#x3E;&#xA;&#x20;&#x20;&#x20;&#x20;&#x49;&#x20;&#x61;&#x6D;&#x20;&#x61;&#x20;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x21;&#xA;&#x20;&#x20;&#x20;&#x20;&#x3C;&#x62;&#x75;&#x74;&#x74;&#x6F;&#x6E;&#x20;&#x64;&#x61;&#x74;&#x61;&#x2D;&#x72;&#x65;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x2D;&#x61;&#x63;&#x74;&#x69;&#x6F;&#x6E;&#x3D;&#x22;&#x63;&#x6C;&#x6F;&#x73;&#x65;&#x22;&#x20;&#x63;&#x6C;&#x61;&#x73;&#x73;&#x3D;&#x22;&#x72;&#x65;&#x73;&#x65;&#x74;&#x20;&#x72;&#x65;&#x6D;&#x6F;&#x64;&#x61;&#x6C;&#x2D;&#x63;&#x6C;&#x6F;&#x73;&#x65;&#x22;&#x3E;&#x3C;&#x2F;&#x62;&#x75;&#x74;&#x74;&#x6F;&#x6E;&#x3E;&#xA;&#x3C;&#x2F;&#x64;&#x69;&#x76;&#x3E;</code></pre>
+
 	{{/content}}
 {{/extend}}

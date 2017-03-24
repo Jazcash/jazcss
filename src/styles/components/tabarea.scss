@@ -3,16 +3,16 @@
 		display: inline-block;
 		margin-right: -5px;
 		padding: 10px;
-		background-color: #eee;
+		background-color: #ddd;
 		&:hover, &.active{
 			cursor: pointer;
-			background-color: #fff;
+			background-color: #eee;
 		}
 	}
 	&__contents{
 		white-space: nowrap;
 		overflow: hidden;
-		background-color: color(white);
+		background-color: #eee;
 		box-shadow: 1px 1px 0 rgba(#000, 0.07);
 	}
 	&__content{
