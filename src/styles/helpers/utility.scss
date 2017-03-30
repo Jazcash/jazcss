@@ -11,6 +11,9 @@
 .text-right{
 	text-align: right;
 }
+.text-justify{
+	text-align: justify;
+}
 
 .block{
 	display: block;
@@ -26,5 +29,10 @@
 }
 
 .center{
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hidden{
+	visibility: hidden;
 }
