@@ -1,6 +1,6 @@
 {
   "name": "jazcss",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "My CSS library",
   "repository": {
     "type": "git",
@@ -39,6 +39,6 @@
     "gulp-watch": "^4.3.11",
     "handlebars-layouts": "^3.1.4",
     "run-sequence": "^1.2.2",
-		"handlebars-helpers": "^0.8.0"
+    "handlebars-helpers": "^0.8.0"
   }
 }
