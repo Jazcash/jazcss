@@ -22,18 +22,27 @@
 */
 .scroll-width{
 	&-12{
+		.wrapped{
+			@include below($wrapperWidth + 12px){ width: 100%; }
+		}
 		.unwrapped{
 			margin-left: calc(-50vw + 50% + 6px);
 			margin-right: calc(-50vw + 50% + 6px);
 		}
 	}
 	&-15{
+		.wrapped{
+			@include below($wrapperWidth + 15px){ width: 100%; }
+		}
 		.unwrapped{
 			margin-left: calc(-50vw + 50% + 7px);
 			margin-right: calc(-50vw + 50% + 8px);
 		}
 	}
 	&-17{
+		.wrapped{
+			@include below($wrapperWidth + 17px){ width: 100%; }
+		}
 		.unwrapped{
 			margin-left: calc(-50vw + 50% + 8px);
 			margin-right: calc(-50vw + 50% + 9px);
